@@ -222,9 +222,9 @@ export default async function HomePage() {
             <ScrollReveal animation="fade-up">
               <Link
                 href={`/work/${leadProject.slug}`}
-                className="group grid grid-cols-1 xl:grid-cols-12 gap-px bg-[var(--border-subtle)] border border-structural hover:border-structural-strong transition-colors"
+                className="group flex flex-col justify-between border border-structural hover:border-structural-strong bg-[var(--bg-primary)] p-8 md:p-12 lg:p-16 transition-colors"
               >
-                <div className="xl:col-span-7 bg-[var(--bg-primary)] p-8 md:p-12 lg:p-16 space-y-8">
+                <div className="space-y-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="type-metadata px-2.5 py-1 bg-[var(--bg-secondary)] border border-structural">
                       Featured inquiry
@@ -242,9 +242,11 @@ export default async function HomePage() {
                     {leadProject.shortDescription}
                   </p>
                 </div>
-                <div className="lg:col-span-12 xl:col-span-5 min-h-[400px] bg-[var(--bg-secondary)] relative overflow-hidden flex items-end">
-                  <DistributionCurve className="absolute inset-0 w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-90" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent opacity-80 pointer-events-none" />
+
+                <div className="pt-8 mt-12 border-t border-structural flex items-center justify-between">
+                  <span className="type-metadata text-[var(--accent)] group-hover:text-[var(--text-main)] transition-colors">
+                    Open inquiry &rarr;
+                  </span>
                 </div>
               </Link>
             </ScrollReveal>

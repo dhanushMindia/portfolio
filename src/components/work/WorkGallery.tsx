@@ -94,55 +94,48 @@ export function WorkGallery({ projects, allTopics }: WorkGalleryProps) {
                 >
                   <Link
                     href={`/work/${project.slug}`}
-                    className="group grid grid-cols-1 xl:grid-cols-12 gap-px bg-[var(--border-subtle)] border border-structural hover:border-structural-strong transition-colors block"
+                    className="group flex flex-col justify-between border border-structural hover:border-structural-strong bg-[var(--bg-primary)] p-8 md:p-12 lg:p-14 transition-colors"
                   >
-                    <div className="xl:col-span-7 bg-[var(--bg-primary)] p-8 md:p-12 lg:p-14 space-y-6 flex flex-col justify-between">
-                      <div className="space-y-6">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className="type-metadata px-2.5 py-1 bg-[var(--bg-secondary)] border border-structural">
-                            Lead Dossier
+                    <div className="space-y-6">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="type-metadata px-2.5 py-1 bg-[var(--bg-secondary)] border border-structural">
+                          Lead Dossier
+                        </span>
+                        <span className={`type-metadata px-2.5 py-1 text-xs border border-structural ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)] text-[var(--bg-primary)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] text-[var(--bg-primary)]' : 'bg-transparent text-[var(--text-main)]'}`}>
+                          {project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}
+                        </span>
+                        {project.startDate && (
+                          <span className="font-mono text-xs text-[var(--text-muted)]">
+                            {new Date(project.startDate).getFullYear()}
                           </span>
-                          <span className={`type-metadata px-2.5 py-1 text-xs border border-structural ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)] text-[var(--bg-primary)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] text-[var(--bg-primary)]' : 'bg-transparent text-[var(--text-main)]'}`}>
-                            {project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}
-                          </span>
-                          {project.startDate && (
-                            <span className="font-mono text-xs text-[var(--text-muted)]">
-                              {new Date(project.startDate).getFullYear()}
-                            </span>
-                          )}
-                        </div>
-
-                        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors text-balance">
-                          {project.title}
-                        </h2>
-
-                        {project.shortDescription && (
-                          <p className="type-body text-lg text-[var(--text-muted)] max-w-2xl leading-relaxed">
-                            {project.shortDescription}
-                          </p>
                         )}
                       </div>
 
-                      <div className="pt-6 border-t border-structural flex flex-wrap items-center justify-between gap-4">
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.topics.map((t) => (
-                            <span
-                              key={t.topic.id}
-                              className="type-metadata px-2 py-0.5 border border-structural bg-[var(--bg-secondary)]/50 text-[var(--text-muted)]"
-                            >
-                              {t.topic.name}
-                            </span>
-                          ))}
-                        </div>
-                        <span className="type-metadata text-[var(--accent)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">
-                          Open inquiry &rarr;
-                        </span>
-                      </div>
+                      <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors text-balance">
+                        {project.title}
+                      </h2>
+
+                      {project.shortDescription && (
+                        <p className="type-body text-lg text-[var(--text-muted)] max-w-2xl leading-relaxed">
+                          {project.shortDescription}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="xl:col-span-5 min-h-[320px] bg-[var(--bg-secondary)] relative overflow-hidden flex items-end">
-                      <DistributionCurve className="absolute inset-0 w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-85" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent opacity-80 pointer-events-none" />
+                    <div className="pt-6 mt-12 border-t border-structural flex flex-wrap items-center justify-between gap-4">
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.topics.map((t) => (
+                          <span
+                            key={t.topic.id}
+                            className="type-metadata px-2 py-0.5 border border-structural bg-[var(--bg-secondary)]/50 text-[var(--text-muted)]"
+                          >
+                            {t.topic.name}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="type-metadata text-[var(--accent)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">
+                        Open inquiry &rarr;
+                      </span>
                     </div>
                   </Link>
                 </motion.div>
