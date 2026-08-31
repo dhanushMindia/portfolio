@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 import { prisma } from "@/lib/prisma";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import Link from "next/link";
