@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { prisma } from "@/lib/prisma";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import Link from "next/link";
+import { ResearchExplorer } from "@/components/research/ResearchExplorer";
 
 export default async function ResearchPage() {
   const topics = await prisma.topic.findMany({
@@ -20,8 +20,34 @@ export default async function ResearchPage() {
   });
 
   const activeTopics = topics.filter((t) => t.projects.length > 0 || t.articles.length > 0);
-  const leadTopic = activeTopics[0];
+  const leadTopic = activeTopics.length > 0 ? activeTopics[0] : null;
   const recordCount = activeTopics.reduce((sum, topic) => sum + topic.projects.length + topic.articles.length, 0);
+
+  const formattedTopics = activeTopics.map(topic => {
+    return {
+      id: topic.id,
+      name: topic.name,
+      description: topic.description,
+      projects: topic.projects,
+      articles: topic.articles,
+      records: [
+        ...topic.projects.map(({ project }) => ({
+          id: project.id,
+          label: "Project" as const,
+          title: project.title,
+          description: project.shortDescription,
+          href: `/work/${project.slug}`,
+        })),
+        ...topic.articles.map(({ article }) => ({
+          id: article.id,
+          label: "Essay" as const,
+          title: article.title,
+          description: article.subtitle,
+          href: `/writing/${article.slug}`,
+        })),
+      ]
+    };
+  });
 
   return (
     <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1600px] pb-32">
@@ -52,10 +78,10 @@ export default async function ResearchPage() {
               <p className="type-metadata text-[var(--accent)]">Featured area</p>
               <div>
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[var(--text-main)] leading-tight text-balance">
-                  {leadTopic.name.toUpperCase()}
+                  {leadTopic?.name.toUpperCase()}
                 </h2>
                 <p className="type-body text-[var(--text-muted)] mt-6 max-w-3xl leading-relaxed">
-                  {leadTopic.description || "Ongoing thematic exploration incorporating cross-disciplinary methods."}
+                  {leadTopic?.description || "Ongoing thematic exploration incorporating cross-disciplinary methods."}
                 </p>
               </div>
             </div>
@@ -74,72 +100,7 @@ export default async function ResearchPage() {
             </div>
           </section>
 
-          <div className="space-y-28">
-            {activeTopics.map((topic, index) => {
-              const relatedRecords = [
-                ...topic.projects.map(({ project }) => ({
-                  id: project.id,
-                  label: "Project",
-                  title: project.title,
-                  description: project.shortDescription,
-                  href: `/work/${project.slug}`,
-                })),
-                ...topic.articles.map(({ article }) => ({
-                  id: article.id,
-                  label: "Essay",
-                  title: article.title,
-                  description: article.subtitle,
-                  href: `/writing/${article.slug}`,
-                })),
-              ];
-
-              return (
-                <ScrollReveal key={topic.id} animation="fade-up" delay={index * 80}>
-                  <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-                    <div className="lg:col-span-4">
-                      <div className="lg:sticky lg:top-28 space-y-6">
-                        <div className="flex items-center gap-4">
-                          <span className="font-mono text-xs text-[var(--text-muted)]">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <div className="h-px flex-1 bg-[var(--border-subtle)]" />
-                        </div>
-                        <h2 className="font-serif text-3xl md:text-4xl text-[var(--text-main)] leading-tight">{topic.name}</h2>
-                        <p className="type-body text-base md:text-lg text-[var(--text-muted)]">
-                          {topic.description || "Ongoing thematic exploration incorporating cross-disciplinary methods."}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="lg:col-span-8 divide-y divide-structural border-y border-structural">
-                      {relatedRecords.map((record) => (
-                        <Link
-                          key={`${record.label}-${record.id}`}
-                          href={record.href}
-                          className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-5 py-7 hover:bg-[var(--bg-secondary)]/25 transition-colors"
-                        >
-                          <span className="type-metadata text-[var(--text-muted)]">{record.label}</span>
-                          <span>
-                            <span className="type-heading-2 block group-hover:text-[var(--accent)] transition-colors">
-                              {record.title}
-                            </span>
-                            {record.description && (
-                              <span className="type-ui text-[var(--text-muted)] block mt-2 line-clamp-2">
-                                {record.description}
-                              </span>
-                            )}
-                          </span>
-                          <span className="type-metadata text-[var(--text-faint)] group-hover:text-[var(--text-main)]">
-                            -&gt;
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </section>
-                </ScrollReveal>
-              );
-            })}
-          </div>
+          <ResearchExplorer topics={formattedTopics} />
         </div>
       )}
     </div>

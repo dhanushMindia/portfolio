@@ -37,6 +37,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
     shortDescription: project?.shortDescription || "",
     blocks: project?.blocks || ([] as ContentBlock[]),
     status: project?.status || "DRAFT",
+    progressStatus: (project as any)?.progressStatus || "ONGOING",
     visibility: project?.visibility || "PRIVATE",
     featured: project?.featured || false,
     startDate: project?.startDate
@@ -57,7 +58,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
 
     try {
       const url = project
-        ? `/api/projects?id=${project.id}`
+        ? `/api/projects/${project.id}`
         : "/api/projects";
       const method = project ? "PUT" : "POST";
 
@@ -228,25 +229,10 @@ export function ProjectForm({ project }: ProjectFormProps) {
       {/* Status & visibility */}
       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
         <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
-          Publishing
+          Publishing & Status
         </h2>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Status
-            </label>
-            <select
-              value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              <option value="DRAFT">Draft</option>
-              <option value="PUBLISHED">Published</option>
-              <option value="ARCHIVED">Archived</option>
-            </select>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Visibility
@@ -261,6 +247,36 @@ export function ProjectForm({ project }: ProjectFormProps) {
               <option value="PRIVATE">🔒 Private</option>
               <option value="UNLISTED">🔗 Unlisted</option>
               <option value="PUBLIC">🌐 Public</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Lifecycle Status
+            </label>
+            <select
+              value={formData.progressStatus}
+              onChange={(e) => setFormData({ ...formData, progressStatus: e.target.value })}
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="PLANNING">Planning</option>
+              <option value="ONGOING">Ongoing</option>
+              <option value="COMPLETED">Completed</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Publish Status
+            </label>
+            <select
+              value={formData.status}
+              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="DRAFT">Draft</option>
+              <option value="PUBLISHED">Published</option>
+              <option value="ARCHIVED">Archived</option>
             </select>
           </div>
         </div>

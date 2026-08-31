@@ -63,6 +63,7 @@ export async function POST(request: NextRequest) {
       nextWeekFocus,
       projectIds = [],
       skillIds = [],
+      attachments = [],
     } = body;
 
     const journalEntry = await prisma.journalEntry.create({
@@ -87,10 +88,19 @@ export async function POST(request: NextRequest) {
             skill: { connect: { id } },
           })),
         },
+        attachments: {
+          create: attachments.map((a: any) => ({
+            title: a.title,
+            url: a.url,
+            fileType: a.fileType,
+            size: a.size || 0,
+          })),
+        }
       },
       include: {
         projects: { include: { project: true } },
         skills: { include: { skill: true } },
+        attachments: true,
       },
     });
 

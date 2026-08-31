@@ -13,6 +13,7 @@ interface ProjectItem {
   slug: string;
   shortDescription: string | null;
   startDate: Date | null;
+  progressStatus: "PLANNING" | "ONGOING" | "COMPLETED";
   topics: { topic: { id: string; name: string } }[];
   featured?: boolean;
 }
@@ -101,6 +102,9 @@ export function WorkGallery({ projects, allTopics }: WorkGalleryProps) {
                           <span className="type-metadata px-2.5 py-1 bg-[var(--bg-secondary)] border border-structural">
                             Lead Dossier
                           </span>
+                          <span className={`type-metadata px-2.5 py-1 text-xs border border-structural ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)] text-[var(--bg-primary)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] text-[var(--bg-primary)]' : 'bg-transparent text-[var(--text-main)]'}`}>
+                            {project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}
+                          </span>
                           {project.startDate && (
                             <span className="font-mono text-xs text-[var(--text-muted)]">
                               {new Date(project.startDate).getFullYear()}
@@ -171,7 +175,10 @@ export function WorkGallery({ projects, allTopics }: WorkGalleryProps) {
                   >
                     <div className="space-y-5 flex-grow">
                       <div className="flex items-center justify-between">
-                        <div className="flex flex-wrap gap-1">
+                        <div className="flex flex-wrap gap-1 items-center">
+                          <span className={`type-metadata px-2 py-0.5 mr-1 text-[10px] border border-structural ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)] text-[var(--bg-primary)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] text-[var(--bg-primary)]' : 'bg-transparent text-[var(--text-main)]'}`}>
+                            {project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}
+                          </span>
                           {project.topics.map((t) => (
                             <span key={t.topic.id} className="type-metadata px-2 py-0.5 bg-[var(--bg-secondary)] border border-structural">
                               {t.topic.name}
@@ -220,11 +227,16 @@ export function WorkGallery({ projects, allTopics }: WorkGalleryProps) {
                 >
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-6">
                     <div className="md:w-1/4 space-y-2">
-                      <span className="font-mono text-xs text-[var(--text-faint)]">
-                        {project.startDate
-                          ? new Date(project.startDate).getFullYear()
-                          : "ARCHIVE"}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs text-[var(--text-faint)]">
+                          {project.startDate
+                            ? new Date(project.startDate).getFullYear()
+                            : "ARCHIVE"}
+                        </span>
+                        <span className={`type-metadata px-1.5 py-0.5 text-[9px] border border-structural ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)] text-[var(--bg-primary)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] text-[var(--bg-primary)]' : 'bg-transparent text-[var(--text-main)]'}`}>
+                          {project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}
+                        </span>
+                      </div>
                       <div className="flex flex-wrap gap-1">
                         {project.topics.map((t) => (
                           <span

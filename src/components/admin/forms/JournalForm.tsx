@@ -23,6 +23,7 @@ interface JournalFormProps {
     visibility: string;
     projects?: { projectId: string }[];
     skills?: { skillId: string }[];
+    attachments?: { id: string; title: string; url: string; fileType: string; size: number }[];
   };
 }
 
@@ -66,6 +67,7 @@ export function JournalForm({ entry }: JournalFormProps) {
     visibility: entry?.visibility || "PRIVATE",
     projectIds: entry?.projects?.map((p) => p.projectId) || [],
     skillIds: entry?.skills?.map((s) => s.skillId) || [],
+    attachments: entry?.attachments || [],
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -302,6 +304,97 @@ export function JournalForm({ entry }: JournalFormProps) {
           selectedIds={formData.skillIds}
           onChange={(skillIds) => setFormData({ ...formData, skillIds })}
         />
+      </div>
+
+      {/* Attachments */}
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
+        <div className="flex justify-between items-center">
+          <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+            Attachments & Assets
+          </h2>
+          <Button
+            type="button"
+            onClick={() => setFormData({
+              ...formData,
+              attachments: [
+                ...formData.attachments,
+                { id: `temp-${Date.now()}`, title: '', url: '', fileType: 'PDF', size: 0 }
+              ]
+            })}
+            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-md"
+          >
+            + Add Attachment
+          </Button>
+        </div>
+
+        {formData.attachments.length === 0 ? (
+          <p className="text-sm text-gray-500 italic">No attachments added yet.</p>
+        ) : (
+          <div className="space-y-4">
+            {formData.attachments.map((attachment, index) => (
+              <div key={attachment.id} className="grid grid-cols-12 gap-3 items-center border border-gray-200 dark:border-gray-800 p-3 rounded-md">
+                <div className="col-span-4">
+                  <label className="block text-xs mb-1 text-gray-500">Title</label>
+                  <input
+                    type="text"
+                    value={attachment.title}
+                    onChange={(e) => {
+                      const newAttachments = [...formData.attachments];
+                      newAttachments[index].title = e.target.value;
+                      setFormData({ ...formData, attachments: newAttachments });
+                    }}
+                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                    placeholder="e.g. Q1 Fiscal Report"
+                  />
+                </div>
+                <div className="col-span-4">
+                  <label className="block text-xs mb-1 text-gray-500">URL</label>
+                  <input
+                    type="text"
+                    value={attachment.url}
+                    onChange={(e) => {
+                      const newAttachments = [...formData.attachments];
+                      newAttachments[index].url = e.target.value;
+                      setFormData({ ...formData, attachments: newAttachments });
+                    }}
+                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                    placeholder="https://..."
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label className="block text-xs mb-1 text-gray-500">Type</label>
+                  <select
+                    value={attachment.fileType}
+                    onChange={(e) => {
+                      const newAttachments = [...formData.attachments];
+                      newAttachments[index].fileType = e.target.value;
+                      setFormData({ ...formData, attachments: newAttachments });
+                    }}
+                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                  >
+                    <option value="PDF">PDF</option>
+                    <option value="DOCUMENT">Document</option>
+                    <option value="SPREADSHEET">Spreadsheet</option>
+                    <option value="CODE">Code</option>
+                    <option value="LINK">Link</option>
+                  </select>
+                </div>
+                <div className="col-span-2 flex justify-end mt-4">
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      const newAttachments = formData.attachments.filter((_, i) => i !== index);
+                      setFormData({ ...formData, attachments: newAttachments });
+                    }}
+                    className="text-red-500 hover:text-red-700 text-sm px-2"
+                  >
+                    Remove
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Status & visibility */}

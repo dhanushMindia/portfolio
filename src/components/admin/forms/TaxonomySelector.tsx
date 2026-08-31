@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface TaxonomySelectorProps {
   type: "topics" | "skills";
@@ -18,6 +18,10 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
   const [items, setItems] = useState<TaxonomyItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [isCreating, setIsCreating] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function fetchTaxonomy() {
@@ -33,17 +37,18 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
         setLoading(false);
       }
     }
-
     fetchTaxonomy();
   }, [type]);
 
-  if (loading) {
-    return <div className="text-sm text-gray-500 animate-pulse">Loading {type}...</div>;
-  }
-
-  if (items.length === 0) {
-    return <div className="text-sm text-gray-500">No {type} found. Manage them in the admin dashboard.</div>;
-  }
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const toggleItem = (id: string) => {
     if (selectedIds.includes(id)) {
@@ -53,23 +58,57 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
     }
   };
 
+  const handleCreateNew = async () => {
+    if (!search.trim()) return;
+    setIsCreating(true);
+    try {
+      const slug = search
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+
+      const body = type === "topics"
+        ? { name: search.trim(), slug, description: "" }
+        : { name: search.trim(), slug, category: "" };
+
+      const res = await fetch(`/api/${type}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        const newItem = data[type === "topics" ? "topic" : "skill"];
+        setItems([...items, newItem]);
+        onChange([...selectedIds, newItem.id]);
+        setSearch("");
+        setIsOpen(false);
+      } else {
+        const err = await res.json();
+        alert(err.error || `Failed to create ${type}`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert(`Error creating ${type}`);
+    } finally {
+      setIsCreating(false);
+    }
+  };
+
+  if (loading) {
+    return <div className="text-sm text-gray-500 animate-pulse">Loading {type}...</div>;
+  }
+
+  const exactMatch = items.find(i => i.name.toLowerCase() === search.toLowerCase());
   const filteredItems = items.filter(item =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  return (
-    <div className="space-y-4">
-      {/* Search/Filter (if lots of items) */}
-      {items.length > 5 && (
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder={`Filter ${type}...`}
-          className="w-full text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-800 rounded bg-gray-50 dark:bg-gray-900"
-        />
-      )}
+  const unselectedFiltered = filteredItems.filter(i => !selectedIds.includes(i.id));
 
+  return (
+    <div className="space-y-4" ref={wrapperRef}>
       {/* Selected tags */}
       {selectedIds.length > 0 && (
         <div className="flex flex-wrap gap-2">
@@ -79,13 +118,13 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
             return (
               <span
                 key={id}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-main)] rounded-full group"
               >
                 {item.name}
                 <button
                   type="button"
                   onClick={() => toggleItem(id)}
-                  className="hover:text-blue-600 dark:hover:text-blue-200"
+                  className="text-[var(--text-faint)] group-hover:text-[var(--text-main)] transition-colors"
                 >
                   ×
                 </button>
@@ -95,29 +134,56 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
         </div>
       )}
 
-      {/* Available items grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-48 overflow-y-auto  p-1 border border-gray-200 dark:border-gray-800 rounded">
-        {filteredItems.map(item => {
-          const isSelected = selectedIds.includes(item.id);
-          return (
-            <label
-              key={item.id}
-              className={`flex items-center p-2 text-sm rounded cursor-pointer transition-colors ${
-                isSelected
-                  ? "bg-gray-50 dark:bg-gray-800 font-medium"
-                  : "hover:bg-gray-50 dark:hover:bg-gray-800"
-              }`}
-            >
-              <input
-                type="checkbox"
-                checked={isSelected}
-                onChange={() => toggleItem(item.id)}
-                className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 mr-2"
-              />
-              <span className="truncate">{item.name}</span>
-            </label>
-          );
-        })}
+      {/* Creatable Combobox */}
+      <div className="relative">
+        <input
+          ref={inputRef}
+          type="text"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setIsOpen(true);
+          }}
+          onFocus={() => setIsOpen(true)}
+          placeholder={`Search or create ${type}...`}
+          className="w-full text-sm px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+
+        {isOpen && (search || unselectedFiltered.length > 0) && (
+          <div className="absolute z-10 mt-1 w-full max-h-60 overflow-y-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-lg">
+            {unselectedFiltered.map(item => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => {
+                  toggleItem(item.id);
+                  setSearch("");
+                  setIsOpen(false);
+                }}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                {item.name}
+              </button>
+            ))}
+
+            {search && !exactMatch && (
+              <button
+                type="button"
+                onClick={handleCreateNew}
+                disabled={isCreating}
+                className="w-full text-left px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors border-t border-gray-100 dark:border-gray-800"
+              >
+                {isCreating ? "Creating..." : `+ Create "${search}"`}
+              </button>
+            )}
+
+            {!search && unselectedFiltered.length === 0 && (
+              <div className="px-4 py-3 text-sm text-gray-500 text-center">
+                All {type} are selected.
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

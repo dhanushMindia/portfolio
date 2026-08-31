@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({
             ["Organization", project.organization || "Independent research"],
             ["Role", project.role || "Researcher"],
             ["Format", project.projectType || "Case study"],
-            ["Status", "Completed"],
+            ["Status", project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()],
           ].map(([label, value]) => (
             <div key={label} className="bg-[var(--bg-primary)] p-5 md:p-6">
               <p className="type-metadata text-[var(--text-faint)]">{label}</p>
@@ -187,8 +187,8 @@ export default async function ProjectDetailPage({
                   Project Status
                 </p>
                 <div className="flex items-center gap-2 text-[var(--text-main)] font-sans text-xs">
-                  <span className="w-2 h-2 rounded-full bg-[var(--text-main)]" />
-                  <span>Completed</span>
+                  <span className={`w-2 h-2 rounded-full ${project.progressStatus === 'COMPLETED' ? 'bg-[var(--text-main)]' : project.progressStatus === 'ONGOING' ? 'bg-[var(--text-muted)] animate-pulse' : 'bg-[var(--border-strong)]'}`} />
+                  <span>{project.progressStatus.charAt(0) + project.progressStatus.slice(1).toLowerCase()}</span>
                 </div>
               </div>
             </div>

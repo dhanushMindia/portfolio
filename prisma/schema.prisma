@@ -95,6 +95,7 @@ model JournalEntry {
   visibility    Visibility            @default(PRIVATE)
   projects      JournalEntryProject[]
   skills        JournalEntrySkill[]
+  attachments   Attachment[]
   createdAt     DateTime              @default(now())
   updatedAt     DateTime              @updatedAt
   publishedAt   DateTime?
@@ -237,8 +238,25 @@ enum ProjectStatus {
   ARCHIVED
 }
 
+enum ProgressStatus {
+  PLANNING
+  ONGOING
+  COMPLETED
+}
+
 enum Visibility {
   PUBLIC
   UNLISTED
   PRIVATE
+}
+
+model Attachment {
+  id             String        @id @default(cuid())
+  title          String
+  url            String
+  fileType       String
+  size           Int
+  journalEntryId String
+  journalEntry   JournalEntry  @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
+  createdAt      DateTime      @default(now())
 }

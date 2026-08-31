@@ -6,6 +6,22 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ScrollTimelineProgress } from "@/components/ui/ScrollPhysics";
 import { JournalTimelineMarker } from "@/components/ui/JournalTimelineMarker";
 
+// Helper for attachment icons
+const getFileIcon = (fileType: string) => {
+  switch (fileType?.toUpperCase()) {
+    case "PDF":
+      return "📄";
+    case "SPREADSHEET":
+      return "📊";
+    case "CODE":
+      return "💻";
+    case "DOCUMENT":
+      return "📝";
+    default:
+      return "🔗";
+  }
+};
+
 export default async function JournalPage() {
   const [entries, skills, profile] = await Promise.all([
     prisma.journalEntry.findMany({
@@ -28,6 +44,7 @@ export default async function JournalPage() {
             },
           },
         },
+        attachments: true,
       },
     }),
     prisma.skill.findMany({
@@ -201,6 +218,39 @@ export default async function JournalPage() {
                               </div>
                             )}
                           </div>
+
+                          {/* REPOSITORY & ATTACHMENTS */}
+                          {entry.attachments && entry.attachments.length > 0 && (
+                            <div className="border border-structural p-5 bg-[var(--bg-primary)] space-y-4">
+                              <h4 className="type-metadata text-[var(--text-main)] font-semibold border-b border-structural pb-2 flex items-center gap-2 text-xs">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                                REPOSITORY & ARTIFACTS
+                              </h4>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {entry.attachments.map((attachment: any) => (
+                                  <a
+                                    key={attachment.id}
+                                    href={attachment.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 p-3 border border-structural bg-[var(--bg-secondary)]/30 hover:bg-[var(--bg-secondary)] transition-colors group"
+                                  >
+                                    <span className="text-xl md:text-2xl group-hover:scale-110 transition-transform">
+                                      {getFileIcon(attachment.fileType)}
+                                    </span>
+                                    <div className="flex flex-col overflow-hidden">
+                                      <span className="type-ui text-sm text-[var(--text-main)] truncate font-medium">
+                                        {attachment.title}
+                                      </span>
+                                      <span className="type-metadata text-[10px] text-[var(--text-muted)] mt-0.5">
+                                        {attachment.fileType} {attachment.size > 0 && `• ${(attachment.size / 1024).toFixed(1)} KB`}
+                                      </span>
+                                    </div>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
 
                         {/* Right: Weekly Reflection & Learning Ledger */}

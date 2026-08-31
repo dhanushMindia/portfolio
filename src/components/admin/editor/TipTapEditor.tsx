@@ -1,12 +1,12 @@
 "use client";
 
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, FloatingMenu, BubbleMenu } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { useEffect } from "react";
 
 interface TipTapEditorProps {
-  content: string;
-  onChange: (content: string) => void;
+  content: any;
+  onChange: (content: any) => void;
 }
 
 const MenuBar = ({ editor }: { editor: any }) => {
@@ -92,29 +92,81 @@ const MenuBar = ({ editor }: { editor: any }) => {
 };
 
 export function TipTapEditor({ content, onChange }: TipTapEditorProps) {
+  const contentString = typeof content === 'string' ? content : JSON.stringify(content) === '[]' ? '' : content;
+
   const editor = useEditor({
     extensions: [StarterKit],
-    content,
+    content: contentString,
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm dark:prose-invert max-w-none focus:outline-none p-3 min-h-[100px]",
+          "prose prose-sm dark:prose-invert max-w-none focus:outline-none p-3 min-h-[300px]",
       },
     },
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML());
+      // For Article compat with JSON db field, we can return the JSON representation
+      // or just HTML string. Let's return JSON to be safe with prisma Json type.
+      onChange(editor.getJSON() as any);
     },
   });
 
   useEffect(() => {
-    if (editor && content !== editor.getHTML()) {
-      editor.commands.setContent(content);
+    if (editor && typeof contentString === 'string' && contentString !== editor.getHTML()) {
+      editor.commands.setContent(contentString);
+    } else if (editor && typeof contentString === 'object') {
+      // If it's TipTap JSON
+      // @ts-ignore
+      editor.commands.setContent(contentString);
     }
-  }, [content, editor]);
+  }, [contentString, editor]);
 
   return (
-    <div className="border border-gray-200 dark:border-gray-800 rounded-md overflow-hidden bg-white dark:bg-gray-950">
+    <div className="border border-gray-200 dark:border-gray-800 rounded-md overflow-hidden bg-white dark:bg-gray-950 relative">
       <MenuBar editor={editor} />
+      {editor && (
+        <FloatingMenu editor={editor} tippyOptions={{ duration: 100 }} className="flex gap-1 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
+          <button
+            onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+            className={editor.isActive('heading', { level: 2 }) ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs' : 'px-2 py-1 rounded text-xs hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            H2
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+            className={editor.isActive('heading', { level: 3 }) ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs' : 'px-2 py-1 rounded text-xs hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            H3
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleBlockquote().run()}
+            className={editor.isActive('blockquote') ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs' : 'px-2 py-1 rounded text-xs hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            Quote
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+            className={editor.isActive('codeBlock') ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs' : 'px-2 py-1 rounded text-xs hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            Code
+          </button>
+        </FloatingMenu>
+      )}
+      {editor && (
+        <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }} className="flex gap-1 p-1 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md">
+          <button
+            onClick={() => editor.chain().focus().toggleBold().run()}
+            className={editor.isActive('bold') ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-bold' : 'px-2 py-1 rounded text-xs font-bold hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            B
+          </button>
+          <button
+            onClick={() => editor.chain().focus().toggleItalic().run()}
+            className={editor.isActive('italic') ? 'bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs italic' : 'px-2 py-1 rounded text-xs italic hover:bg-gray-100 dark:hover:bg-gray-700'}
+          >
+            I
+          </button>
+        </BubbleMenu>
+      )}
       <EditorContent editor={editor} />
     </div>
   );

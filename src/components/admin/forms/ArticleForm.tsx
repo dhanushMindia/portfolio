@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ContentBlock } from "@/types/blocks";
-import { BlockEditor } from "@/components/admin/editor/BlockEditor";
+import { TipTapEditor } from "@/components/admin/editor/TipTapEditor";
 import { Button } from "@/components/ui/Button";
 import { TaxonomySelector } from "@/components/admin/forms/TaxonomySelector";
 
@@ -13,7 +12,7 @@ interface ArticleFormProps {
     title: string;
     slug: string;
     subtitle: string | null;
-    content: ContentBlock[];
+    content: any;
     status: string;
     visibility: string;
     topics?: { topic: { id: string; name: string } }[];
@@ -29,7 +28,7 @@ export function ArticleForm({ article }: ArticleFormProps) {
     title: article?.title || "",
     slug: article?.slug || "",
     subtitle: article?.subtitle || "",
-    content: article?.content || ([] as ContentBlock[]),
+    content: article?.content || {},
     status: article?.status || "DRAFT",
     visibility: article?.visibility || "PRIVATE",
     topicIds: article?.topics?.map((t) => t.topic.id) || [],
@@ -145,13 +144,13 @@ export function ArticleForm({ article }: ArticleFormProps) {
         </div>
       </div>
 
-      {/* Content blocks */}
+      {/* Content */}
       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
         <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-6">
-          Content Blocks
+          Article Content
         </h2>
-        <BlockEditor
-          blocks={formData.content}
+        <TipTapEditor
+          content={formData.content}
           onChange={(content) => setFormData({ ...formData, content })}
         />
       </div>

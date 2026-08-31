@@ -33,6 +33,7 @@ export async function GET(
         },
       },
       skills: { include: { skill: true } },
+      attachments: true,
     },
   });
 
@@ -67,6 +68,7 @@ export async function PUT(
       visibility,
       projectIds,
       skillIds,
+      attachments,
     } = body;
 
     const updateData: any = {
@@ -103,12 +105,25 @@ export async function PUT(
       };
     }
 
+    if (attachments !== undefined) {
+      await prisma.attachment.deleteMany({ where: { journalEntryId: id } });
+      updateData.attachments = {
+        create: attachments.map((a: any) => ({
+          title: a.title,
+          url: a.url,
+          fileType: a.fileType,
+          size: a.size || 0,
+        })),
+      };
+    }
+
     const journalEntry = await prisma.journalEntry.update({
       where: { id },
       data: updateData,
       include: {
         projects: { include: { project: true } },
         skills: { include: { skill: true } },
+        attachments: true,
       },
     });
 
