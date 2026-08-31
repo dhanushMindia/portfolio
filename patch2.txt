@@ -1,0 +1,30 @@
+      {/* Connections */}
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+          Connections
+        </h2>
+        
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Projects Worked On
+          </label>
+          <JournalProjectLinker
+            selectedProjectIds={formData.projectIds}
+            onChange={(ids) => setFormData({ ...formData, projectIds: ids })}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 flex items-center justify-between">
+            <span>Skills Used</span>
+            <span className="text-xs font-normal text-gray-500">
+              Evidence tracking for skills
+            </span>
+          </label>
+          <TaxonomySelector
+            type="skills"
+            selectedIds={formData.skillIds}
+            onChange={(ids) => setFormData({ ...formData, skillIds: ids })}
+          />
+        </div>
+      </div>

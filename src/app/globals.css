@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: theme('colors.sand.50');
+    --bg-secondary: theme('colors.sand.100');
+    --border-subtle: theme('colors.sand.200');
+    --border-strong: theme('colors.sand.300');
+    --text-main: theme('colors.sand.900');
+    --text-muted: theme('colors.sand.500');
+    --text-faint: theme('colors.sand.400');
+
+    --accent: theme('colors.accent.600');
+    --accent-muted: theme('colors.accent.200');
+  }
+
+  .dark {
+    --bg-primary: theme('colors.sand.950');
+    --bg-secondary: theme('colors.sand.900');
+    --border-subtle: theme('colors.sand.800');
+    --border-strong: theme('colors.sand.700');
+    --text-main: theme('colors.sand.100');
+    --text-muted: theme('colors.sand.400');
+    --text-faint: theme('colors.sand.600');
+
+    --accent: theme('colors.accent.300');
+    --accent-muted: theme('colors.accent.800');
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-main)];
+    /* Very subtle noise texture for a physical feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    @apply bg-accent-200 dark:bg-accent-900 text-sand-900 dark:text-sand-50;
+  }
+
+  /* Headings typography adjustments */
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Fine borders for structural lines */
+  .border-structural {
+    @apply border-[var(--border-subtle)];
+  }
+
+  .border-structural-strong {
+    @apply border-[var(--border-strong)];
+  }
+
+  /* Typographic hierarchies */
+  .type-display {
+    @apply font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-normal leading-[1.05];
+  }
+
+  .type-heading-1 {
+    @apply font-serif text-4xl sm:text-5xl md:text-6xl tracking-normal leading-tighter;
+  }
+
+  .type-heading-2 {
+    @apply font-sans font-medium text-2xl sm:text-3xl tracking-normal;
+  }
+
+  .type-body {
+    @apply font-serif text-lg md:text-xl lg:text-[22px] leading-relaxed text-[var(--text-main)] text-pretty;
+  }
+
+  .type-ui {
+    @apply font-sans text-sm md:text-base leading-snug tracking-normal text-[var(--text-main)];
+  }
+
+  .type-metadata {
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-wider text-[var(--text-muted)];
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+  }
+}
+
+/* Base custom styles for prose to keep it elegant */
+.prose-editorial {
+  @apply text-[var(--text-main)];
+}
+.prose-editorial p {
+  @apply font-serif text-[20px] md:text-[22px] leading-[1.7] mb-8 text-pretty;
+}
+.prose-editorial ul {
+  @apply list-disc list-inside mb-8 space-y-2;
+}
+.prose-editorial ol {
+  @apply list-decimal list-inside mb-8 space-y-2;
+}
+.prose-editorial li {
+  @apply font-serif text-[20px] md:text-[22px] leading-[1.7] text-[var(--text-main)];
+}
+.prose-editorial h2 {
+  @apply font-serif text-3xl md:text-4xl mt-16 mb-6 font-normal tracking-normal;
+}
+.prose-editorial h3 {
+  @apply font-sans text-xl md:text-2xl mt-12 mb-4 font-medium tracking-normal;
+}
+.prose-editorial a {
+  @apply text-[var(--accent)] underline decoration-1 underline-offset-[3px] transition-colors hover:text-[var(--text-main)];
+}
+.prose-editorial strong {
+  @apply font-semibold;
+}
+.prose-editorial blockquote {
+  @apply border-l-[3px] border-[var(--accent-muted)] pl-6 italic text-[var(--text-muted)] my-10 font-serif text-2xl leading-relaxed;
+}

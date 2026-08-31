@@ -1,0 +1,137 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f6e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e7]: Dhanush Mendu
+        - generic [ref=f6e8]: Research & Analysis Archive
+      - navigation [ref=f6e9]:
+        - link "Work" [ref=f6e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f6e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f6e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f6e13] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f6e14] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f6e15] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f6e16] [cursor=pointer]:
+          - generic [ref=f6e19]: Catalog
+          - generic [ref=f6e20]: ⌘K
+        - button "Toggle dark mode" [ref=f6e170] [cursor=pointer]
+  - main [ref=f6e23]:
+    - generic [ref=f6e222]:
+      - generic [ref=f6e223]:
+        - link "← Index of Inquiries" [ref=f6e224] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f6e225]: ←
+          - text: Index of Inquiries
+        - generic [ref=f6e226]: ARCHIVE REF // minimum-wage-impact-analysis
+      - generic [ref=f6e228]:
+        - generic [ref=f6e229]:
+          - generic [ref=f6e230]: Case Study & Methodology
+          - generic [ref=f6e231]: May 2024 — Present
+        - heading "Minimum Wage Impact Analysis" [level=1] [ref=f6e232]
+        - paragraph [ref=f6e233]: Analysis of minimum wage increases on local small businesses using county employment data.
+      - generic [ref=f6e235]:
+        - generic [ref=f6e236]:
+          - paragraph [ref=f6e237]: Organization
+          - paragraph [ref=f6e238]: Center for San Jose Policy Research
+        - generic [ref=f6e239]:
+          - paragraph [ref=f6e240]: Role
+          - paragraph [ref=f6e241]: Research Intern
+        - generic [ref=f6e242]:
+          - paragraph [ref=f6e243]: Format
+          - paragraph [ref=f6e244]: Research Study
+        - generic [ref=f6e245]:
+          - paragraph [ref=f6e246]: Status
+          - paragraph [ref=f6e247]: Empirical record
+      - generic [ref=f6e250]:
+        - paragraph [ref=f6e251]: Case-study evidence field
+        - paragraph [ref=f6e252]: Fiscal and labor-market observations
+      - generic [ref=f6e253]:
+        - generic [ref=f6e255]:
+          - generic [ref=f6e256]:
+            - generic [ref=f6e257]:
+              - generic [ref=f6e258]: METHODOLOGICAL FRAMEWORK
+              - generic [ref=f6e259]: EVIDENTIARY ARCHITECTURE
+            - heading "Difference-in-Differences Setup" [level=4] [ref=f6e260]
+            - paragraph [ref=f6e262]: We constructed a generalized difference-in-differences (DiD) model exploiting the variance in county-level minimum wage adoption timelines within the state. A core concern was pre-existing divergence in county employment trends.
+          - generic [ref=f6e263]:
+            - paragraph [ref=f6e264]: Treatment Counties
+            - paragraph [ref=f6e265]: "14"
+            - paragraph [ref=f6e266]:
+              - generic [ref=f6e267]: →
+              - generic [ref=f6e268]: Out of 58 total
+          - generic [ref=f6e269]:
+            - generic [ref=f6e270]: PRIMARY ANALYTICAL FINDING
+            - paragraph [ref=f6e273]: No statistically significant aggregate disemployment effects were detected in retail clusters within 12 months post-implementation.
+            - generic [ref=f6e274]:
+              - generic [ref=f6e275]:
+                - paragraph [ref=f6e276]: Empirical Evidence
+                - paragraph [ref=f6e277]: Employment variances remained within a standard error of 0.04 across control and treated units.
+              - generic [ref=f6e278]:
+                - paragraph [ref=f6e279]: Policy Implication
+                - paragraph [ref=f6e280]: Local labor markets may absorb moderate wage floors through alternative channels (e.g., price pass-through, reduced turnover) rather than immediate headcount reductions.
+        - generic [ref=f6e282]:
+          - heading "RESEARCH ARCHITECTURE" [level=3] [ref=f6e283]
+          - generic [ref=f6e284]:
+            - generic [ref=f6e285]:
+              - paragraph [ref=f6e286]: Primary Classification
+              - paragraph [ref=f6e287]: Applied Policy & Econometric Framework
+            - generic [ref=f6e288]:
+              - paragraph [ref=f6e289]: Thematic Taxonomy
+              - generic [ref=f6e290]:
+                - generic [ref=f6e291]: Economic Policy
+                - generic [ref=f6e292]: Data Analysis
+            - generic [ref=f6e293]:
+              - paragraph [ref=f6e294]: Methodological Tools
+              - generic [ref=f6e295]:
+                - generic [ref=f6e296]: Python
+                - generic [ref=f6e297]: Excel
+            - generic [ref=f6e298]:
+              - paragraph [ref=f6e299]: Verification Status
+              - generic [ref=f6e300]: Empirical Record Verified
+  - contentinfo [ref=f6e136]:
+    - generic [ref=f6e137]:
+      - generic [ref=f6e138]:
+        - generic [ref=f6e139]:
+          - link "Dhanush Mendu" [ref=f6e140] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f6e141]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f6e142]:
+          - heading "Navigate" [level=3] [ref=f6e143]
+          - list [ref=f6e144]:
+            - listitem [ref=f6e145]:
+              - link "Work" [ref=f6e146] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f6e147]:
+              - link "Research" [ref=f6e148] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f6e149]:
+              - link "Writing" [ref=f6e150] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f6e151]:
+              - link "Journal" [ref=f6e152] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f6e153]:
+              - link "Archive" [ref=f6e154] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f6e155]:
+          - heading "Connect" [level=3] [ref=f6e156]
+          - list [ref=f6e157]:
+            - listitem [ref=f6e158]:
+              - link "LinkedIn" [ref=f6e159] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f6e162]:
+              - link "About" [ref=f6e163] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f6e164]:
+        - paragraph [ref=f6e165]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - generic [ref=f6e166]:
+          - paragraph [ref=f6e167]: VER 08/26
+          - button "Toggle dark mode" [ref=f6e173] [cursor=pointer]
+  - alert [ref=f6e176]

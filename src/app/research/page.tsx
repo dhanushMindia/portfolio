@@ -1,0 +1,147 @@
+export const dynamic = "force-dynamic";
+
+import { prisma } from "@/lib/prisma";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import Link from "next/link";
+
+export default async function ResearchPage() {
+  const topics = await prisma.topic.findMany({
+    include: {
+      projects: {
+        where: { project: { status: "PUBLISHED", visibility: "PUBLIC" } },
+        include: { project: true },
+      },
+      articles: {
+        where: { article: { status: "PUBLISHED", visibility: "PUBLIC" } },
+        include: { article: true },
+      },
+    },
+    orderBy: { name: "asc" },
+  });
+
+  const activeTopics = topics.filter((t) => t.projects.length > 0 || t.articles.length > 0);
+  const leadTopic = activeTopics[0];
+  const recordCount = activeTopics.reduce((sum, topic) => sum + topic.projects.length + topic.articles.length, 0);
+
+  return (
+    <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1600px] pb-32">
+      <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-structural pb-10">
+        <ScrollReveal animation="fade-up" className="lg:col-span-6 space-y-4">
+          <p className="type-metadata text-[var(--text-muted)]">Research Areas</p>
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[var(--text-main)] tracking-tight text-balance">
+            Domains & Themes
+          </h1>
+        </ScrollReveal>
+        <ScrollReveal animation="fade-left" delay={120} className="lg:col-span-6 lg:pt-8 self-end">
+          <p className="type-body text-[var(--text-muted)] text-xl leading-relaxed max-w-xl lg:ml-auto">
+            A structured breakdown of focus areas connecting independent projects, published essays, and field analysis.
+          </p>
+        </ScrollReveal>
+      </header>
+
+      {activeTopics.length === 0 ? (
+        <div className="py-24 text-center border border-structural border-dashed mt-16">
+          <p className="type-body text-[var(--text-muted)] italic">
+            No public research domains currently indexed.
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-24 mt-16">
+          <section className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-[var(--border-subtle)] border border-structural">
+            <div className="lg:col-span-7 bg-[var(--bg-primary)] p-8 md:p-12 lg:p-16 space-y-8 flex flex-col justify-between">
+              <p className="type-metadata text-[var(--accent)]">Featured area</p>
+              <div>
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[var(--text-main)] leading-tight text-balance">
+                  {leadTopic.name.toUpperCase()}
+                </h2>
+                <p className="type-body text-[var(--text-muted)] mt-6 max-w-3xl leading-relaxed">
+                  {leadTopic.description || "Ongoing thematic exploration incorporating cross-disciplinary methods."}
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-5 bg-[var(--border-subtle)] grid grid-cols-2 gap-px">
+              {[
+                ["Total Areas", activeTopics.length],
+                ["Linked records", recordCount],
+                ["Projects", activeTopics.reduce((sum, topic) => sum + topic.projects.length, 0)],
+                ["Essays", activeTopics.reduce((sum, topic) => sum + topic.articles.length, 0)],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-[var(--bg-primary)] p-6 md:p-8 flex flex-col justify-center">
+                  <p className="type-metadata text-[var(--text-muted)]">{label}</p>
+                  <p className="font-serif text-4xl md:text-5xl text-[var(--text-main)] mt-4">{value}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="space-y-28">
+            {activeTopics.map((topic, index) => {
+              const relatedRecords = [
+                ...topic.projects.map(({ project }) => ({
+                  id: project.id,
+                  label: "Project",
+                  title: project.title,
+                  description: project.shortDescription,
+                  href: `/work/${project.slug}`,
+                })),
+                ...topic.articles.map(({ article }) => ({
+                  id: article.id,
+                  label: "Essay",
+                  title: article.title,
+                  description: article.subtitle,
+                  href: `/writing/${article.slug}`,
+                })),
+              ];
+
+              return (
+                <ScrollReveal key={topic.id} animation="fade-up" delay={index * 80}>
+                  <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+                    <div className="lg:col-span-4">
+                      <div className="lg:sticky lg:top-28 space-y-6">
+                        <div className="flex items-center gap-4">
+                          <span className="font-mono text-xs text-[var(--text-muted)]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <div className="h-px flex-1 bg-[var(--border-subtle)]" />
+                        </div>
+                        <h2 className="font-serif text-3xl md:text-4xl text-[var(--text-main)] leading-tight">{topic.name}</h2>
+                        <p className="type-body text-base md:text-lg text-[var(--text-muted)]">
+                          {topic.description || "Ongoing thematic exploration incorporating cross-disciplinary methods."}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-8 divide-y divide-structural border-y border-structural">
+                      {relatedRecords.map((record) => (
+                        <Link
+                          key={`${record.label}-${record.id}`}
+                          href={record.href}
+                          className="group grid grid-cols-1 md:grid-cols-[130px_1fr_auto] gap-5 py-7 hover:bg-[var(--bg-secondary)]/25 transition-colors"
+                        >
+                          <span className="type-metadata text-[var(--text-muted)]">{record.label}</span>
+                          <span>
+                            <span className="type-heading-2 block group-hover:text-[var(--accent)] transition-colors">
+                              {record.title}
+                            </span>
+                            {record.description && (
+                              <span className="type-ui text-[var(--text-muted)] block mt-2 line-clamp-2">
+                                {record.description}
+                              </span>
+                            )}
+                          </span>
+                          <span className="type-metadata text-[var(--text-faint)] group-hover:text-[var(--text-main)]">
+                            -&gt;
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

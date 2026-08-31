@@ -1,0 +1,103 @@
+- generic [active] [ref=f15e1]:
+  - banner [ref=f15e2]:
+    - generic [ref=f15e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f15e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f15e7]: Dhanush Mendu
+        - generic [ref=f15e8]: Research & Analysis Archive
+      - navigation [ref=f15e9]:
+        - link "Work" [ref=f15e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f15e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f15e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f15e13] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f15e14] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f15e15] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f15e17] [cursor=pointer]:
+          - generic [ref=f15e20]: Catalog
+          - generic [ref=f15e21]: ⌘K
+  - main [ref=f15e24]:
+    - generic [ref=f15e25]:
+      - generic [ref=f15e26]:
+        - generic [ref=f15e27]:
+          - paragraph [ref=f15e28]: Full Index
+          - heading "Archive" [level=1] [ref=f15e29]
+        - paragraph [ref=f15e31]: Chronological log of all public records across projects, monographs, and field journals.
+      - generic [ref=f15e33]:
+        - generic [ref=f15e34]:
+          - paragraph [ref=f15e35]: Projects
+          - paragraph [ref=f15e36]: "1"
+        - generic [ref=f15e37]:
+          - paragraph [ref=f15e38]: Writing
+          - paragraph [ref=f15e39]: "0"
+        - generic [ref=f15e40]:
+          - paragraph [ref=f15e41]: Journal
+          - paragraph [ref=f15e42]: "1"
+      - table [ref=f15e45]:
+        - rowgroup [ref=f15e46]:
+          - row [ref=f15e47]:
+            - columnheader "Date" [ref=f15e48]
+            - columnheader "Classification" [ref=f15e49]
+            - columnheader "Title" [ref=f15e50]
+            - columnheader "Access" [ref=f15e51]
+        - rowgroup [ref=f15e52]:
+          - row [ref=f15e53]:
+            - cell "2024 — 05" [ref=f15e54]
+            - cell "Project" [ref=f15e55]
+            - cell [ref=f15e57]:
+              - link "Minimum Wage Impact Analysis" [ref=f15e58] [cursor=pointer]:
+                - /url: /work/minimum-wage-impact-analysis
+            - cell [ref=f15e59]:
+              - link [ref=f15e60] [cursor=pointer]:
+                - /url: /work/minimum-wage-impact-analysis
+          - row [ref=f15e63]:
+            - cell "2024 — 05" [ref=f15e64]
+            - cell "Journal" [ref=f15e65]
+            - cell [ref=f15e67]:
+              - 'link "Week 1: Onboarding and Initial Data Collection" [ref=f15e68] [cursor=pointer]':
+                - /url: /journal#1
+            - cell [ref=f15e69]:
+              - link [ref=f15e70] [cursor=pointer]:
+                - /url: /journal#1
+  - contentinfo [ref=f15e73]:
+    - generic [ref=f15e74]:
+      - generic [ref=f15e75]:
+        - generic [ref=f15e76]:
+          - link "Dhanush Mendu" [ref=f15e77] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f15e78]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f15e79]:
+          - heading "Navigate" [level=3] [ref=f15e80]
+          - list [ref=f15e81]:
+            - listitem [ref=f15e82]:
+              - link "Work" [ref=f15e83] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f15e84]:
+              - link "Research" [ref=f15e85] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f15e86]:
+              - link "Writing" [ref=f15e87] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f15e88]:
+              - link "Journal" [ref=f15e89] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f15e90]:
+              - link "Archive" [ref=f15e91] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f15e92]:
+          - heading "Connect" [level=3] [ref=f15e93]
+          - list [ref=f15e94]:
+            - listitem [ref=f15e95]:
+              - link "LinkedIn" [ref=f15e96] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f15e99]:
+              - link "About" [ref=f15e100] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f15e101]:
+        - paragraph [ref=f15e102]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f15e104]: VER 08/26

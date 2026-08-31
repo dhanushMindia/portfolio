@@ -1,0 +1,87 @@
+- generic [active] [ref=f18e1]:
+  - banner [ref=f18e2]:
+    - generic [ref=f18e4]:
+      - link "Dhanush Mendu" [ref=f18e6] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f18e8]:
+        - button "Search" [ref=f18e9] [cursor=pointer]
+        - button "Toggle menu" [ref=f18e13] [cursor=pointer]
+  - main [ref=f18e16]:
+    - generic [ref=f18e17]:
+      - generic [ref=f18e18]:
+        - generic [ref=f18e19]:
+          - paragraph [ref=f18e20]: Background & Directives
+          - heading "Dhanush Mendu" [level=1] [ref=f18e21]
+        - paragraph [ref=f18e23]: Research & Analysis
+      - generic [ref=f18e24]:
+        - paragraph [ref=f18e28]: Research associate focusing on data-driven policy analysis and economic research.
+        - generic [ref=f18e31]:
+          - generic [ref=f18e32]:
+            - heading "Current Role" [level=3] [ref=f18e33]
+            - paragraph [ref=f18e34]: Research Analyst Intern
+          - generic [ref=f18e35]:
+            - heading "Location" [level=3] [ref=f18e36]
+            - paragraph [ref=f18e37]: San Jose, CA
+          - generic [ref=f18e38]:
+            - heading "Focus Areas" [level=3] [ref=f18e39]
+            - generic [ref=f18e40]:
+              - generic [ref=f18e41]: Economic Policy
+              - generic [ref=f18e42]: Data Analysis
+              - generic [ref=f18e43]: Research Methods
+          - generic [ref=f18e44]:
+            - heading "Contact & Links" [level=3] [ref=f18e45]
+            - link "Email ↗" [ref=f18e47] [cursor=pointer]:
+              - /url: mailto:dhanush.mendu@example.com
+              - generic [ref=f18e48]: Email
+              - generic [ref=f18e49]: ↗
+      - generic [ref=f18e50]:
+        - generic [ref=f18e52]:
+          - paragraph [ref=f18e53]: Operating Principles
+          - heading "Methodology & Ethos" [level=2] [ref=f18e54]
+        - generic [ref=f18e56]:
+          - generic [ref=f18e57]:
+            - heading "Evidence first" [level=2] [ref=f18e58]
+            - paragraph [ref=f18e59]: Claims are strongest when their sources, limits, and assumptions remain visible.
+          - generic [ref=f18e60]:
+            - heading "Systems view" [level=2] [ref=f18e61]
+            - paragraph [ref=f18e62]: Policy questions are read across institutions, incentives, implementation, and lived outcomes.
+          - generic [ref=f18e63]:
+            - heading "Living record" [level=2] [ref=f18e64]
+            - paragraph [ref=f18e65]: Projects, essays, and weekly notes stay connected as the work matures.
+  - contentinfo [ref=f18e66]:
+    - generic [ref=f18e67]:
+      - generic [ref=f18e68]:
+        - generic [ref=f18e69]:
+          - link "Dhanush Mendu" [ref=f18e70] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f18e71]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f18e72]:
+          - heading "Navigate" [level=3] [ref=f18e73]
+          - list [ref=f18e74]:
+            - listitem [ref=f18e75]:
+              - link "Work" [ref=f18e76] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f18e77]:
+              - link "Research" [ref=f18e78] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f18e79]:
+              - link "Writing" [ref=f18e80] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f18e81]:
+              - link "Journal" [ref=f18e82] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f18e83]:
+              - link "Archive" [ref=f18e84] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f18e85]:
+          - heading "Connect" [level=3] [ref=f18e86]
+          - list [ref=f18e87]:
+            - listitem [ref=f18e88]:
+              - link "LinkedIn" [ref=f18e89] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f18e92]:
+              - link "About" [ref=f18e93] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f18e94]:
+        - paragraph [ref=f18e95]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f18e97]: VER 08/26

@@ -1,0 +1,139 @@
+- generic [active] [ref=f8e1]:
+  - banner [ref=f8e2]:
+    - generic [ref=f8e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f8e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f8e7]: Dhanush Mendu
+        - generic [ref=f8e8]: Research & Analysis Archive
+      - navigation [ref=f8e9]:
+        - link "Work" [ref=f8e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f8e12] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f8e13] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f8e14] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f8e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f8e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f8e17] [cursor=pointer]:
+          - generic [ref=f8e20]: Catalog
+          - generic [ref=f8e21]: ⌘K
+  - main [ref=f8e24]:
+    - generic [ref=f8e25]:
+      - generic [ref=f8e26]:
+        - link "← Index of Inquiries" [ref=f8e27] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f8e28]: ←
+          - text: Index of Inquiries
+        - generic [ref=f8e29]: ARCHIVE REF // minimum-wage-impact-analysis
+      - generic [ref=f8e31]:
+        - generic [ref=f8e32]:
+          - generic [ref=f8e33]: Case Study
+          - generic [ref=f8e34]: May 2024 — Present
+        - heading "Minimum Wage Impact Analysis" [level=1] [ref=f8e35]
+        - paragraph [ref=f8e36]: Analysis of minimum wage increases on local small businesses using county employment data.
+      - generic [ref=f8e38]:
+        - generic [ref=f8e39]:
+          - paragraph [ref=f8e40]: Organization
+          - paragraph [ref=f8e41]: Center for San Jose Policy Research
+        - generic [ref=f8e42]:
+          - paragraph [ref=f8e43]: Role
+          - paragraph [ref=f8e44]: Research Intern
+        - generic [ref=f8e45]:
+          - paragraph [ref=f8e46]: Format
+          - paragraph [ref=f8e47]: Research Study
+        - generic [ref=f8e48]:
+          - paragraph [ref=f8e49]: Status
+          - paragraph [ref=f8e50]: Empirical record
+      - generic [ref=f8e53]:
+        - paragraph [ref=f8e54]: Case-study evidence field
+        - paragraph [ref=f8e55]: Fiscal and labor-market observations
+      - generic [ref=f8e56]:
+        - paragraph [ref=f8e60]: This is placeholder content. Administrator must populate with actual findings from the CSPR portfolio record.
+        - generic [ref=f8e62]:
+          - heading "RESEARCH ARCHITECTURE" [level=3] [ref=f8e63]
+          - generic [ref=f8e64]:
+            - generic [ref=f8e65]:
+              - paragraph [ref=f8e66]: Primary Classification
+              - paragraph [ref=f8e67]: Applied Policy & Econometric Framework
+            - generic [ref=f8e68]:
+              - paragraph [ref=f8e69]: Thematic Taxonomy
+              - generic [ref=f8e70]:
+                - generic [ref=f8e71]: Economic Policy
+                - generic [ref=f8e72]: Data Analysis
+            - generic [ref=f8e73]:
+              - paragraph [ref=f8e74]: Methodological Tools
+              - generic [ref=f8e75]:
+                - generic [ref=f8e76]: Python
+                - generic [ref=f8e77]: Excel
+            - generic [ref=f8e78]:
+              - paragraph [ref=f8e79]: Verification Status
+              - generic [ref=f8e80]: Empirical Record Verified
+      - generic [ref=f8e83]:
+        - generic [ref=f8e84]:
+          - paragraph [ref=f8e85]: Longitudinal Analysis
+          - heading "Empirical Trajectory Over Time" [level=2] [ref=f8e86]
+        - generic [ref=f8e88]:
+          - generic [ref=f8e89]:
+            - heading "FISCAL OBSERVATION" [level=3] [ref=f8e90]
+            - generic [ref=f8e91]:
+              - generic [ref=f8e92]:
+                - heading "Establishing the baseline." [level=4] [ref=f8e93]
+                - paragraph [ref=f8e94]: Pre-treatment employment levels remained statistically stable across observed counties between Q1–Q4 prior to ordinance implementation.
+              - generic [ref=f8e95]:
+                - heading "Initial divergence." [level=4] [ref=f8e96]
+                - paragraph [ref=f8e97]: Upon implementation (Month 0), short-run variance increased but quickly reverted to the mean, demonstrating high absorptive capacity in retail labor demand.
+              - generic [ref=f8e98]:
+                - heading "The unexpected equilibrium." [level=4] [ref=f8e99]
+                - paragraph [ref=f8e100]:
+                  - text: At month 12, treatment units actually exhibited a marginal 1.2% headcount
+                  - emphasis [ref=f8e101]: increase
+                  - text: ", contradicting orthodox disemployment models."
+          - generic [ref=f8e103]:
+            - generic [ref=f8e105]: EVIDENCE CANVAS
+            - generic [ref=f8e106]: N=58 COUNTIES
+            - img [ref=f8e107]:
+              - generic: Q3 BASELINE
+              - generic:
+                - generic: +1.2% CAP
+                - generic: treatment eq.
+  - contentinfo [ref=f8e109]:
+    - generic [ref=f8e110]:
+      - generic [ref=f8e111]:
+        - generic [ref=f8e112]:
+          - link "Dhanush Mendu" [ref=f8e113] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f8e114]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f8e115]:
+          - heading "Navigate" [level=3] [ref=f8e116]
+          - list [ref=f8e117]:
+            - listitem [ref=f8e118]:
+              - link "Work" [ref=f8e119] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f8e120]:
+              - link "Research" [ref=f8e121] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f8e122]:
+              - link "Writing" [ref=f8e123] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f8e124]:
+              - link "Journal" [ref=f8e125] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f8e126]:
+              - link "Archive" [ref=f8e127] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f8e128]:
+          - heading "Connect" [level=3] [ref=f8e129]
+          - list [ref=f8e130]:
+            - listitem [ref=f8e131]:
+              - link "LinkedIn" [ref=f8e132] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f8e135]:
+              - link "About" [ref=f8e136] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f8e137]:
+        - paragraph [ref=f8e138]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f8e140]: VER 08/26

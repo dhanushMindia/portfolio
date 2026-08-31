@@ -1,0 +1,10 @@
+@@ -28,5 +28,5 @@
+-      <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-structural pb-12">
+-        <ScrollReveal animation="fade-up" className="lg:col-span-7 space-y-6">
+-          <p className="type-metadata text-[var(--text-muted)]">Taxonomy / Inquiry Map</p>
+-          <h1 className="type-display text-[var(--text-main)]">Research Domains</h1>
++      <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-structural pb-10">
++        <ScrollReveal animation="fade-up" className="lg:col-span-6 space-y-4">
++          <p className="type-metadata text-[var(--text-muted)]">Taxonomy / Domain Index</p>
++          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[var(--text-main)] tracking-tight text-balance">Research Domains</h1>
+         </ScrollReveal>

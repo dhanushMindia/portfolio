@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Platform Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-dark: #1e40aPa55w0rf;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #090d16;
+        --card-bg: #111827;
+        --border: #1f2937;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --accent: #3b82f6;
+        --accent-light: #1e293b;
+        --accent-dark: #60a5fa;
+        --success: #22c55e;
+        --success-light: #064e3b;
+        --warning: #f59e0b;
+        --warning-light: #451a03;
+        --danger: #ef4444;
+        --danger-light: #450a0a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding: 2.5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+      font-weight: 500;
+    }
+
+    .badge-primary {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .badge-success {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .badge-danger {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .badge-warning {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      background: var(--border);
+      color: var(--text-main);
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.875rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      background: var(--bg);
+      padding: 0.15rem 0.3rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .diagram {
+      border: 1px dashed var(--border);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: var(--bg);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      white-space: pre;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Personal Research Platform Architecture</h1>
+    <div class="subtitle">Permanent, extensible personal research operating system designed for longitudinal documentation.</div>
+  </header>
+
+  <div class="grid">
+    <!-- Architecture Core -->
+    <div class="card">
+      <h2>Information Architecture</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Core models decoupled from single organizations to support permanent research identity.</p>
+      <div class="pill-list">
+        <span class="pill"><strong>Project</strong> (Block-based Case Studies)</span>
+        <span class="pill"><strong>Article</strong> (Long-form Essays)</span>
+        <span class="pill"><strong>JournalEntry</strong> (Weekly Logs)</span>
+        <span class="pill"><strong>Topic</strong> (Research Taxonomy)</span>
+        <span class="pill"><strong>Skill</strong> (Evidence-Linked Abilities)</span>
+        <span class="pill"><strong>MediaAsset</strong> (S3 Presigned Objects)</span>
+      </div>
+    </div>
+
+    <!-- Security & Privacy Guardrails -->
+    <div class="card">
+      <h2>Privacy Guardrails</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Strict default protections enforced at data access layer.</p>
+      <div class="flow">
+        <div class="step">
+          <div class="step-number">🔒</div>
+          <div>
+            <strong>Default-Private States</strong>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">All records default strictly to <code>status: DRAFT</code> and <code>visibility: PRIVATE</code>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">🛡️</div>
+          <div>
+            <strong>Query-Level Filtering</strong>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">Unauthenticated visitors only retrieve <code>status: PUBLISHED</code> & <code>visibility: PUBLIC</code> via API & search.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">☁️</div>
+          <div>
+            <strong>Object-Level S3 Isolation</strong>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">Private media signed URLs expire after 1 hour; no plain public web uploads on the node filesystem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom: 2rem;">
+    <h2>Publishing Workflow & Security Pipeline</h2>
+    <div class="diagram">
+[ Content Creation ]
+       │ (Auto-assigns status: DRAFT, visibility: PRIVATE)
+       ▼
+[ Local Admin Review / Block Editor ] (Authenticated NextAuth v5 session)
+       │
+       ├─► [ TipTap Rich Text Editing ]
+       ├─► [ Drag & Drop Reordering via @hello-pangea/dnd ]
+       ├─► [ Evidence Linking to Topics & Skills ]
+       │
+       ▼
+[ Explicit Intentional Publish ]
+       │
+       ├──► status: PUBLISHED
+       └──► visibility: PUBLIC
+       │
+       ▼
+[ Public Distribution Engine ]
+       │
+       ├──► /work/[slug] (Rendered with BlockRenderer)
+       ├──► /writing/[slug] (Longform Essay Reader)
+       ├──► /journal (Weekly Timeline Log)
+       └──► /api/search (Insensitive Full-text Filter)
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Tech Stack Summary -->
+    <div class="card">
+      <h2>Tech Stack</h2>
+      <ul style="list-style-type: none; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li>⚡ <strong>Next.js 15</strong> (App Router, Server Components)</li>
+        <li>🐘 <strong>PostgreSQL + Prisma ORM</strong> (Relational Schema)</li>
+        <li>🔐 <strong>NextAuth.js v5</strong> (JWT Credentials Session)</li>
+        <li>📦 <strong>AWS S3 SDK</strong> (Object Storage Integration)</li>
+        <li>🎨 <strong>Tailwind CSS</strong> (Responsive Minimal System)</li>
+        <li>✍️ <strong>TipTap</strong> (Rich Text WYSIWYG)</li>
+      </ul>
+    </div>
+
+    <!-- Status Overview -->
+    <div class="card">
+      <h2>System Status</h2>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span>TypeScript Type Checking</span>
+          <span class="badge badge-success">Passed</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span>Prisma Schema Alignment</span>
+          <span class="badge badge-success">Verified</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span>Object Storage Media Handling</span>
+          <span class="badge badge-success">S3 Ready</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span>Content Privacy Defaults</span>
+          <span class="badge badge-success">Protected</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+- generic [active] [ref=f50e1]:
+  - banner [ref=f50e2]:
+    - generic [ref=f50e4]:
+      - link "Dhanush Mendu" [ref=f50e6] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f50e8]:
+        - button "Search" [ref=f50e9] [cursor=pointer]
+        - button "Toggle menu" [ref=f50e13] [cursor=pointer]
+  - main [ref=f50e16]:
+    - generic [ref=f50e17]:
+      - generic [ref=f50e18]:
+        - generic [ref=f50e19]:
+          - paragraph [ref=f50e20]: Editorial Archive
+          - heading "Monographs & Essays" [level=1] [ref=f50e21]
+        - paragraph [ref=f50e23]: Long-form writing, policy analysis, and methodological reflections on public systems and data architecture.
+      - generic [ref=f50e24]:
+        - link "Feature Essay June 2024 Evaluating Subnational Welfare Dynamics A framework for modeling fiscal policy outcomes in local economies. Read monograph" [ref=f50e26] [cursor=pointer]:
+          - /url: /writing/evaluating-subnational-welfare-dynamics
+          - generic [ref=f50e27]:
+            - generic [ref=f50e28]:
+              - generic [ref=f50e29]:
+                - generic [ref=f50e30]: Feature Essay
+                - generic [ref=f50e31]: June 2024
+              - heading "Evaluating Subnational Welfare Dynamics" [level=2] [ref=f50e32]
+              - paragraph [ref=f50e33]: A framework for modeling fiscal policy outcomes in local economies.
+            - generic [ref=f50e34]:
+              - text: Read monograph
+              - generic [ref=f50e35]: →
+          - complementary [ref=f50e36]:
+            - generic [ref=f50e37]:
+              - paragraph [ref=f50e38]: Subject Index
+              - generic [ref=f50e39]:
+                - generic [ref=f50e40]: Data Analysis
+                - generic [ref=f50e41]: Economic Policy
+            - generic [ref=f50e42]:
+              - generic [ref=f50e43]:
+                - paragraph [ref=f50e44]: Format
+                - paragraph [ref=f50e45]: Analysis note
+              - generic [ref=f50e46]:
+                - paragraph [ref=f50e47]: Status
+                - paragraph [ref=f50e48]: Published
+        - generic [ref=f50e49]:
+          - paragraph [ref=f50e51]: Essay Index
+          - paragraph [ref=f50e54]: Additional essays will collect here as the research record expands.
+  - contentinfo [ref=f50e55]:
+    - generic [ref=f50e56]:
+      - generic [ref=f50e57]:
+        - generic [ref=f50e58]:
+          - link "Dhanush Mendu" [ref=f50e59] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f50e60]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f50e61]:
+          - heading "Navigate" [level=3] [ref=f50e62]
+          - list [ref=f50e63]:
+            - listitem [ref=f50e64]:
+              - link "Work" [ref=f50e65] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f50e66]:
+              - link "Research" [ref=f50e67] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f50e68]:
+              - link "Writing" [ref=f50e69] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f50e70]:
+              - link "Journal" [ref=f50e71] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f50e72]:
+              - link "Archive" [ref=f50e73] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f50e74]:
+          - heading "Connect" [level=3] [ref=f50e75]
+          - list [ref=f50e76]:
+            - listitem [ref=f50e77]:
+              - link "LinkedIn" [ref=f50e78] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f50e81]:
+              - link "About" [ref=f50e82] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f50e83]:
+        - paragraph [ref=f50e84]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f50e86]: VER 08/26

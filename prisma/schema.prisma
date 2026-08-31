@@ -1,0 +1,243 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  id           String   @id @default(cuid())
+  name         String
+  tagline      String
+  bio          String   @db.Text
+  currentRole  String
+  currentFocus String[]
+  location     String?
+  linkedinUrl  String?
+  email        String?
+  resumeUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Project {
+  id               String                @id @default(cuid())
+  title            String
+  slug             String                @unique
+  subtitle         String?
+  shortDescription String                @db.Text
+  status           ProjectStatus         @default(DRAFT)
+  visibility       Visibility            @default(PRIVATE)
+  featured         Boolean               @default(false)
+  featuredOrder    Int?
+  projectType      String?
+  organization     String?
+  role             String?
+  startDate        DateTime?
+  endDate          DateTime?
+  coverImageUrl    String?
+  blocks           Json                  @default("[]")
+  topics           ProjectTopic[]
+  skills           ProjectSkill[]
+  tags             ProjectTag[]
+  journalEntries   JournalEntryProject[]
+  relatedProjects  ProjectRelation[]     @relation("ProjectRelations")
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime              @updatedAt
+  publishedAt      DateTime?
+}
+
+model Article {
+  id            String         @id @default(cuid())
+  title         String
+  slug          String         @unique
+  subtitle      String?
+  coverImageUrl String?
+  content       Json           @default("[]")
+  status        ProjectStatus  @default(DRAFT)
+  visibility    Visibility     @default(PRIVATE)
+  readingTime   Int?
+  topics        ArticleTopic[]
+  tags          ArticleTag[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  publishedAt   DateTime?
+}
+
+model JournalEntry {
+  id            String                @id @default(cuid())
+  weekNumber    Int
+  startDate     DateTime
+  endDate       DateTime
+  title         String
+  focus         String?               @db.Text
+  workCompleted String                @db.Text
+  outcomes      String?               @db.Text
+  reflection    String?               @db.Text
+  challenges    String?               @db.Text
+  nextWeekFocus String?               @db.Text
+  status        ProjectStatus         @default(DRAFT)
+  visibility    Visibility            @default(PRIVATE)
+  projects      JournalEntryProject[]
+  skills        JournalEntrySkill[]
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+  publishedAt   DateTime?
+
+  @@unique([weekNumber])
+}
+
+model Topic {
+  id          String         @id @default(cuid())
+  name        String         @unique
+  slug        String         @unique
+  description String?        @db.Text
+  projects    ProjectTopic[]
+  articles    ArticleTopic[]
+  createdAt   DateTime       @default(now())
+}
+
+model Skill {
+  id             String              @id @default(cuid())
+  name           String              @unique
+  slug           String              @unique
+  category       String?
+  projects       ProjectSkill[]
+  journalEntries JournalEntrySkill[]
+  createdAt      DateTime            @default(now())
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  name      String       @unique
+  slug      String       @unique
+  projects  ProjectTag[]
+  articles  ArticleTag[]
+  createdAt DateTime     @default(now())
+}
+
+model MediaAsset {
+  id          String     @id @default(cuid())
+  title       String
+  description String?    @db.Text
+  fileName    String
+  fileUrl     String
+  fileType    String
+  mimeType    String
+  fileSize    Int
+  source      String?
+  visibility  Visibility @default(PRIVATE)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Source {
+  id              String    @id @default(cuid())
+  title           String
+  author          String?
+  organization    String?
+  publicationDate DateTime?
+  url             String?
+  citationText    String?   @db.Text
+  notes           String?   @db.Text
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+// Relationship tables
+model ProjectTopic {
+  projectId String
+  topicId   String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  topic     Topic   @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, topicId])
+}
+
+model ProjectSkill {
+  projectId String
+  skillId   String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  skill     Skill   @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, skillId])
+}
+
+model ProjectTag {
+  projectId String
+  tagId     String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, tagId])
+}
+
+model ArticleTopic {
+  articleId String
+  topicId   String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  topic     Topic   @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, topicId])
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+}
+
+model JournalEntryProject {
+  journalEntryId String
+  projectId      String
+  journalEntry   JournalEntry @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
+  project        Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@id([journalEntryId, projectId])
+}
+
+model JournalEntrySkill {
+  journalEntryId String
+  skillId        String
+  journalEntry   JournalEntry @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
+  skill          Skill        @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@id([journalEntryId, skillId])
+}
+
+model ProjectRelation {
+  projectId        String
+  relatedProjectId String
+  project          Project @relation("ProjectRelations", fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, relatedProjectId])
+}
+
+enum ProjectStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum Visibility {
+  PUBLIC
+  UNLISTED
+  PRIVATE
+}

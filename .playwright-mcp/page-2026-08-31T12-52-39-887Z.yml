@@ -1,0 +1,161 @@
+- generic [active] [ref=f18e1]:
+  - banner [ref=f18e2]:
+    - generic [ref=f18e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f18e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f18e7]: Dhanush Mendu
+        - generic [ref=f18e8]: Research & Analysis Archive
+      - navigation [ref=f18e9]:
+        - link "Work" [ref=f18e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f18e12] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f18e13] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f18e14] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f18e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f18e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f18e17] [cursor=pointer]:
+          - generic [ref=f18e20]: Catalog
+          - generic [ref=f18e21]: ⌘K
+  - main [ref=f18e24]:
+    - generic [ref=f18e25]:
+      - generic [ref=f18e26]:
+        - link "← Index of Inquiries" [ref=f18e27] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f18e28]: ←
+          - text: Index of Inquiries
+        - generic [ref=f18e29]: ARCHIVE REF // minimum-wage-impact-analysis
+      - generic [ref=f18e31]:
+        - generic [ref=f18e32]:
+          - generic [ref=f18e33]: Case Study & Methodology
+          - generic [ref=f18e34]: May 2024 — Present
+        - heading "Minimum Wage Impact Analysis" [level=1] [ref=f18e35]
+        - paragraph [ref=f18e36]: Analysis of minimum wage increases on local small businesses using county employment data.
+      - generic [ref=f18e38]:
+        - generic [ref=f18e39]:
+          - paragraph [ref=f18e40]: Organization
+          - paragraph [ref=f18e41]: Center for San Jose Policy Research
+        - generic [ref=f18e42]:
+          - paragraph [ref=f18e43]: Role
+          - paragraph [ref=f18e44]: Research Intern
+        - generic [ref=f18e45]:
+          - paragraph [ref=f18e46]: Format
+          - paragraph [ref=f18e47]: Research Study
+        - generic [ref=f18e48]:
+          - paragraph [ref=f18e49]: Status
+          - paragraph [ref=f18e50]: Empirical record
+      - generic [ref=f18e53]:
+        - paragraph [ref=f18e54]: Case-study evidence field
+        - paragraph [ref=f18e55]: Fiscal and labor-market observations
+      - generic [ref=f18e56]:
+        - generic [ref=f18e58]:
+          - generic [ref=f18e59]:
+            - generic [ref=f18e60]:
+              - generic [ref=f18e61]: METHODOLOGICAL FRAMEWORK
+              - generic [ref=f18e62]: EVIDENTIARY ARCHITECTURE
+            - heading "Difference-in-Differences Setup" [level=4] [ref=f18e63]
+            - paragraph [ref=f18e65]: We constructed a generalized difference-in-differences (DiD) model exploiting the variance in county-level minimum wage adoption timelines within the state. A core concern was pre-existing divergence in county employment trends.
+          - generic [ref=f18e66]:
+            - paragraph [ref=f18e67]: Treatment Counties
+            - paragraph [ref=f18e68]: "14"
+            - paragraph [ref=f18e69]:
+              - generic [ref=f18e70]: →
+              - generic [ref=f18e71]: Out of 58 total
+          - generic [ref=f18e72]:
+            - generic [ref=f18e73]: PRIMARY ANALYTICAL FINDING
+            - paragraph [ref=f18e76]: No statistically significant aggregate disemployment effects were detected in retail clusters within 12 months post-implementation.
+            - generic [ref=f18e77]:
+              - generic [ref=f18e78]:
+                - paragraph [ref=f18e79]: Empirical Evidence
+                - paragraph [ref=f18e80]: Employment variances remained within a standard error of 0.04 across control and treated units.
+              - generic [ref=f18e81]:
+                - paragraph [ref=f18e82]: Policy Implication
+                - paragraph [ref=f18e83]: Local labor markets may absorb moderate wage floors through alternative channels (e.g., price pass-through, reduced turnover) rather than immediate headcount reductions.
+        - generic [ref=f18e85]:
+          - heading "RESEARCH ARCHITECTURE" [level=3] [ref=f18e86]
+          - generic [ref=f18e87]:
+            - generic [ref=f18e88]:
+              - paragraph [ref=f18e89]: Primary Classification
+              - paragraph [ref=f18e90]: Applied Policy & Econometric Framework
+            - generic [ref=f18e91]:
+              - paragraph [ref=f18e92]: Thematic Taxonomy
+              - generic [ref=f18e93]:
+                - generic [ref=f18e94]: Economic Policy
+                - generic [ref=f18e95]: Data Analysis
+            - generic [ref=f18e96]:
+              - paragraph [ref=f18e97]: Methodological Tools
+              - generic [ref=f18e98]:
+                - generic [ref=f18e99]: Python
+                - generic [ref=f18e100]: Excel
+            - generic [ref=f18e101]:
+              - paragraph [ref=f18e102]: Verification Status
+              - generic [ref=f18e103]: Empirical Record Verified
+      - generic [ref=f18e106]:
+        - generic [ref=f18e107]:
+          - paragraph [ref=f18e108]: Longitudinal Analysis
+          - heading "Empirical Trajectory Over Time" [level=2] [ref=f18e109]
+        - generic [ref=f18e111]:
+          - generic [ref=f18e112]:
+            - heading "FISCAL OBSERVATION" [level=3] [ref=f18e113]
+            - generic [ref=f18e114]:
+              - generic [ref=f18e115]:
+                - heading "Establishing the baseline." [level=4] [ref=f18e116]
+                - paragraph [ref=f18e117]: Pre-treatment employment levels remained statistically stable across observed counties between Q1–Q4 prior to ordinance implementation.
+              - generic [ref=f18e118]:
+                - heading "Initial divergence." [level=4] [ref=f18e119]
+                - paragraph [ref=f18e120]: Upon implementation (Month 0), short-run variance increased but quickly reverted to the mean, demonstrating high absorptive capacity in retail labor demand.
+              - generic [ref=f18e121]:
+                - heading "The unexpected equilibrium." [level=4] [ref=f18e122]
+                - paragraph [ref=f18e123]:
+                  - text: At month 12, treatment units actually exhibited a marginal 1.2% headcount
+                  - emphasis [ref=f18e124]: increase
+                  - text: ", contradicting orthodox disemployment models."
+          - generic [ref=f18e126]:
+            - generic [ref=f18e128]: EVIDENCE CANVAS
+            - generic [ref=f18e129]: N=58 COUNTIES
+            - img [ref=f18e130]:
+              - generic: Q3 BASELINE
+              - generic:
+                - generic: +1.2% CAP
+                - generic: treatment eq.
+  - contentinfo [ref=f18e132]:
+    - generic [ref=f18e133]:
+      - generic [ref=f18e134]:
+        - generic [ref=f18e135]:
+          - link "Dhanush Mendu" [ref=f18e136] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f18e137]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f18e138]:
+          - heading "Navigate" [level=3] [ref=f18e139]
+          - list [ref=f18e140]:
+            - listitem [ref=f18e141]:
+              - link "Work" [ref=f18e142] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f18e143]:
+              - link "Research" [ref=f18e144] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f18e145]:
+              - link "Writing" [ref=f18e146] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f18e147]:
+              - link "Journal" [ref=f18e148] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f18e149]:
+              - link "Archive" [ref=f18e150] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f18e151]:
+          - heading "Connect" [level=3] [ref=f18e152]
+          - list [ref=f18e153]:
+            - listitem [ref=f18e154]:
+              - link "LinkedIn" [ref=f18e155] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f18e158]:
+              - link "About" [ref=f18e159] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f18e160]:
+        - paragraph [ref=f18e161]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f18e163]: VER 08/26

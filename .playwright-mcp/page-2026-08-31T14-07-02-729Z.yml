@@ -1,0 +1,112 @@
+- generic [active] [ref=f10e1]:
+  - banner [ref=f10e2]:
+    - generic [ref=f10e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f10e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f10e7]: Dhanush Mendu
+        - generic [ref=f10e8]: Research & Analysis Archive
+      - navigation [ref=f10e9]:
+        - link "Work" [ref=f10e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f10e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f10e13] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f10e14] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f10e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f10e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f10e17] [cursor=pointer]:
+          - generic [ref=f10e20]: Catalog
+          - generic [ref=f10e21]: ⌘K
+  - main [ref=f10e24]:
+    - generic [ref=f10e25]:
+      - generic [ref=f10e26]:
+        - generic [ref=f10e27]:
+          - paragraph [ref=f10e28]: Taxonomy / Inquiry Map
+          - heading "Research Domains" [level=1] [ref=f10e29]
+        - paragraph [ref=f10e31]: A structured breakdown of focus areas connecting independent projects, published monographs, and field analysis.
+      - generic [ref=f10e32]:
+        - generic [ref=f10e33]:
+          - generic [ref=f10e34]:
+            - paragraph [ref=f10e35]: Featured inquiry cluster
+            - generic [ref=f10e36]:
+              - heading "Data Analysis" [level=2] [ref=f10e37]
+              - paragraph [ref=f10e38]: Ongoing thematic exploration incorporating cross-disciplinary methods.
+          - generic [ref=f10e39]:
+            - generic [ref=f10e40]:
+              - paragraph [ref=f10e41]: Domains
+              - paragraph [ref=f10e42]: "2"
+            - generic [ref=f10e43]:
+              - paragraph [ref=f10e44]: Linked records
+              - paragraph [ref=f10e45]: "2"
+            - generic [ref=f10e46]:
+              - paragraph [ref=f10e47]: Projects
+              - paragraph [ref=f10e48]: "2"
+            - generic [ref=f10e49]:
+              - paragraph [ref=f10e50]: Essays
+              - paragraph [ref=f10e51]: "0"
+        - generic [ref=f10e52]:
+          - generic [ref=f10e54]:
+            - generic [ref=f10e56]:
+              - generic [ref=f10e57]: "01"
+              - heading "Data Analysis" [level=2] [ref=f10e60]
+              - paragraph [ref=f10e61]: Ongoing thematic exploration incorporating cross-disciplinary methods.
+            - link "Project Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. ->" [ref=f10e63] [cursor=pointer]:
+              - /url: /work/minimum-wage-impact-analysis
+              - generic [ref=f10e64]: Project
+              - generic [ref=f10e65]:
+                - generic [ref=f10e66]: Minimum Wage Impact Analysis
+                - generic [ref=f10e67]: Analysis of minimum wage increases on local small businesses using county employment data.
+              - generic [ref=f10e68]: "->"
+          - generic [ref=f10e70]:
+            - generic [ref=f10e72]:
+              - generic [ref=f10e73]: "02"
+              - heading "Economic Policy" [level=2] [ref=f10e76]
+              - paragraph [ref=f10e77]: Ongoing thematic exploration incorporating cross-disciplinary methods.
+            - link "Project Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. ->" [ref=f10e79] [cursor=pointer]:
+              - /url: /work/minimum-wage-impact-analysis
+              - generic [ref=f10e80]: Project
+              - generic [ref=f10e81]:
+                - generic [ref=f10e82]: Minimum Wage Impact Analysis
+                - generic [ref=f10e83]: Analysis of minimum wage increases on local small businesses using county employment data.
+              - generic [ref=f10e84]: "->"
+  - contentinfo [ref=f10e85]:
+    - generic [ref=f10e86]:
+      - generic [ref=f10e87]:
+        - generic [ref=f10e88]:
+          - link "Dhanush Mendu" [ref=f10e89] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f10e90]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f10e91]:
+          - heading "Navigate" [level=3] [ref=f10e92]
+          - list [ref=f10e93]:
+            - listitem [ref=f10e94]:
+              - link "Work" [ref=f10e95] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f10e96]:
+              - link "Research" [ref=f10e97] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f10e98]:
+              - link "Writing" [ref=f10e99] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f10e100]:
+              - link "Journal" [ref=f10e101] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f10e102]:
+              - link "Archive" [ref=f10e103] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f10e104]:
+          - heading "Connect" [level=3] [ref=f10e105]
+          - list [ref=f10e106]:
+            - listitem [ref=f10e107]:
+              - link "LinkedIn" [ref=f10e108] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f10e111]:
+              - link "About" [ref=f10e112] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f10e113]:
+        - paragraph [ref=f10e114]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f10e116]: VER 08/26

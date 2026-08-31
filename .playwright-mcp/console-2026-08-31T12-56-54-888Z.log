@@ -1,0 +1,42 @@
+[     141ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[     542ms] [LOG] [Fast Refresh] done in 401ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[    1054ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24650
+[  863466ms] [WARNING] You are trying to animate borderColor from "var(--structural-strong)" to "#486581". "var(--structural-strong)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  863906ms] [WARNING] You are trying to animate borderColor from "#486581" to "var(--structural-strong)". "var(--structural-strong)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  891229ms] [WARNING] You are trying to animate borderColor from "var(--structural-strong)" to "#486581". "var(--structural-strong)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  891296ms] [WARNING] You are trying to animate borderColor from "#486581" to "var(--structural-strong)". "var(--structural-strong)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  898693ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  899179ms] [LOG] [Fast Refresh] done in 486ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  911193ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  911572ms] [LOG] [Fast Refresh] done in 378ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  921678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/journal?_rsc=wka06:0
+[  921680ms] [ERROR] Failed to fetch RSC payload for http://localhost:3001/journal. Falling back to browser navigation. TypeError: Failed to fetch
+    at createFetch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js:154:12)
+    at fetchServerResponse (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js:82:27)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js:191:106)
+    at Object.task (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/promise-queue.js:30:38)
+    at PromiseQueue.processNext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/promise-queue.js:81:186)
+    at PromiseQueue.enqueue (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/promise-queue.js:45:76)
+    at createLazyPrefetchEntry (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js:191:49)
+    at getOrCreatePrefetchCacheEntry (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js:138:12)
+    at navigateReducer (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js:144:82)
+    at clientReducer (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/router-reducer/router-reducer.js:25:61)
+    at Object.action (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:130:55)
+    at runAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:42:38)
+    at dispatchAction (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:96:9)
+    at Object.dispatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/router/action-queue.js:128:40)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/use-reducer.js:37:21)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:134:16)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:232:21)
+    at exports.startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:1427:27)
+    at Object.push (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:230:44)
+    at navigate (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js:68:49)
+    at exports.startTransition (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react/cjs/react.development.js:1427:27)
+    at linkClicked (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js:73:20)
+    at onClick (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js:304:13)
+    at processDispatchQueue (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:16146:17)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:16749:9)
+    at batchedUpdates$1 (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:3130:40)
+    at dispatchEventForPluginEventSystem (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:16305:7)
+    at dispatchEvent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:20400:11)
+    at dispatchDiscreteEvent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:20368:11) @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:50

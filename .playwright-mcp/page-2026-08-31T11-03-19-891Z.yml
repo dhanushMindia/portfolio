@@ -1,0 +1,97 @@
+- generic [active] [ref=f7e1]:
+  - banner [ref=f7e2]:
+    - generic [ref=f7e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f7e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f7e7]: Dhanush Mendu
+        - generic [ref=f7e8]: Research & Analysis Archive
+      - navigation [ref=f7e9]:
+        - link "Work" [ref=f7e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f7e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f7e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f7e13] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f7e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f7e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f7e17] [cursor=pointer]:
+          - generic [ref=f7e20]: Catalog
+          - generic [ref=f7e21]: ⌘K
+  - main [ref=f7e24]:
+    - generic [ref=f7e25]:
+      - generic [ref=f7e26]:
+        - generic [ref=f7e27]:
+          - paragraph [ref=f7e28]: Continuous Ledger
+          - heading "Field Records" [level=1] [ref=f7e29]
+        - paragraph [ref=f7e31]: A chronological timeline of operational progress, methodological adjustments, and longitudinal research notes.
+      - generic [ref=f7e32]:
+        - generic [ref=f7e33]:
+          - generic [ref=f7e34]:
+            - paragraph [ref=f7e35]: Range
+            - paragraph [ref=f7e36]: May 2024 - May 2024
+          - generic [ref=f7e37]:
+            - paragraph [ref=f7e38]: Weeks logged
+            - paragraph [ref=f7e39]: "1"
+          - generic [ref=f7e40]:
+            - paragraph [ref=f7e41]: Linked projects
+            - paragraph [ref=f7e42]: "1"
+        - generic [ref=f7e44]:
+          - generic [ref=f7e46]:
+            - heading "2024" [level=2] [ref=f7e47]
+            - generic [ref=f7e48]: 1 record
+          - article [ref=f7e51]:
+            - generic [ref=f7e53]:
+              - generic [ref=f7e54]:
+                - paragraph [ref=f7e55]: WEEK 1
+                - paragraph [ref=f7e56]: May 12, 2024May 18, 2024
+              - generic [ref=f7e57]:
+                - 'heading "Week 1: Onboarding and Initial Data Collection" [level=3] [ref=f7e58]'
+                - paragraph [ref=f7e59]: Onboarding at CSPR, setting up development environment, and beginning initial data collection for the wage study.
+                - generic [ref=f7e60]:
+                  - heading "Execution Record" [level=4] [ref=f7e61]
+                  - paragraph [ref=f7e62]: "- Completed CSPR orientation - Set up Python and Stata environments - Downloaded initial BLS datasets"
+                - generic [ref=f7e63]:
+                  - generic [ref=f7e64]: Linked work
+                  - link "Minimum Wage Impact Analysis" [ref=f7e65] [cursor=pointer]:
+                    - /url: /work/minimum-wage-impact-analysis
+  - contentinfo [ref=f7e66]:
+    - generic [ref=f7e67]:
+      - generic [ref=f7e68]:
+        - generic [ref=f7e69]:
+          - link "Dhanush Mendu" [ref=f7e70] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f7e71]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f7e72]:
+          - heading "Navigate" [level=3] [ref=f7e73]
+          - list [ref=f7e74]:
+            - listitem [ref=f7e75]:
+              - link "Work" [ref=f7e76] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f7e77]:
+              - link "Research" [ref=f7e78] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f7e79]:
+              - link "Writing" [ref=f7e80] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f7e81]:
+              - link "Journal" [ref=f7e82] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f7e83]:
+              - link "Archive" [ref=f7e84] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f7e85]:
+          - heading "Connect" [level=3] [ref=f7e86]
+          - list [ref=f7e87]:
+            - listitem [ref=f7e88]:
+              - link "LinkedIn" [ref=f7e89] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f7e92]:
+              - link "About" [ref=f7e93] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f7e94]:
+        - paragraph [ref=f7e95]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f7e97]: VER 08/26

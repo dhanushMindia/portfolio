@@ -1,0 +1,100 @@
+- generic [active] [ref=f17e1]:
+  - banner [ref=f17e2]:
+    - generic [ref=f17e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f17e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f17e7]: Dhanush Mendu
+        - generic [ref=f17e8]: Research & Analysis Archive
+      - navigation [ref=f17e9]:
+        - link "Work" [ref=f17e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f17e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f17e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f17e13] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f17e14] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f17e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f17e17] [cursor=pointer]:
+          - generic [ref=f17e20]: Catalog
+          - generic [ref=f17e21]: ⌘K
+  - main [ref=f17e24]:
+    - generic [ref=f17e25]:
+      - generic [ref=f17e26]:
+        - generic [ref=f17e27]:
+          - paragraph [ref=f17e28]: Background & Directives
+          - heading "Dhanush Mendu" [level=1] [ref=f17e29]
+        - paragraph [ref=f17e31]: Research & Analysis
+      - generic [ref=f17e32]:
+        - paragraph [ref=f17e36]: Research associate focusing on data-driven policy analysis and economic research.
+        - generic [ref=f17e39]:
+          - generic [ref=f17e40]:
+            - heading "Current Role" [level=3] [ref=f17e41]
+            - paragraph [ref=f17e42]: Research Analyst Intern
+          - generic [ref=f17e43]:
+            - heading "Location" [level=3] [ref=f17e44]
+            - paragraph [ref=f17e45]: San Jose, CA
+          - generic [ref=f17e46]:
+            - heading "Focus Areas" [level=3] [ref=f17e47]
+            - generic [ref=f17e48]:
+              - generic [ref=f17e49]: Economic Policy
+              - generic [ref=f17e50]: Data Analysis
+              - generic [ref=f17e51]: Research Methods
+          - generic [ref=f17e52]:
+            - heading "Contact & Links" [level=3] [ref=f17e53]
+            - link "Email ↗" [ref=f17e55] [cursor=pointer]:
+              - /url: mailto:dhanush.mendu@example.com
+              - generic [ref=f17e56]: Email
+              - generic [ref=f17e57]: ↗
+      - generic [ref=f17e58]:
+        - paragraph [ref=f17e60]: Operating Principles
+        - generic [ref=f17e61]:
+          - generic [ref=f17e62]:
+            - heading "Evidence first" [level=2] [ref=f17e63]
+            - paragraph [ref=f17e64]: Claims are strongest when their sources, limits, and assumptions remain visible.
+          - generic [ref=f17e65]:
+            - heading "Systems view" [level=2] [ref=f17e66]
+            - paragraph [ref=f17e67]: Policy questions are read across institutions, incentives, implementation, and lived outcomes.
+          - generic [ref=f17e68]:
+            - heading "Living record" [level=2] [ref=f17e69]
+            - paragraph [ref=f17e70]: Projects, essays, and weekly notes stay connected as the work matures.
+  - contentinfo [ref=f17e71]:
+    - generic [ref=f17e72]:
+      - generic [ref=f17e73]:
+        - generic [ref=f17e74]:
+          - link "Dhanush Mendu" [ref=f17e75] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f17e76]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f17e77]:
+          - heading "Navigate" [level=3] [ref=f17e78]
+          - list [ref=f17e79]:
+            - listitem [ref=f17e80]:
+              - link "Work" [ref=f17e81] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f17e82]:
+              - link "Research" [ref=f17e83] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f17e84]:
+              - link "Writing" [ref=f17e85] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f17e86]:
+              - link "Journal" [ref=f17e87] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f17e88]:
+              - link "Archive" [ref=f17e89] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f17e90]:
+          - heading "Connect" [level=3] [ref=f17e91]
+          - list [ref=f17e92]:
+            - listitem [ref=f17e93]:
+              - link "LinkedIn" [ref=f17e94] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f17e97]:
+              - link "About" [ref=f17e98] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f17e99]:
+        - paragraph [ref=f17e100]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f17e102]: VER 08/26

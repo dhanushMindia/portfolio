@@ -1,0 +1,68 @@
+- generic [active] [ref=f13e1]:
+  - banner [ref=f13e2]:
+    - generic [ref=f13e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f13e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f13e7]: Dhanush Mendu
+        - generic [ref=f13e8]: Research & Analysis Archive
+      - navigation [ref=f13e9]:
+        - link "Work" [ref=f13e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f13e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f13e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f13e14] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f13e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f13e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f13e17] [cursor=pointer]:
+          - generic [ref=f13e20]: Catalog
+          - generic [ref=f13e21]: ⌘K
+  - main [ref=f13e24]:
+    - generic [ref=f13e25]:
+      - generic [ref=f13e26]:
+        - generic [ref=f13e27]:
+          - paragraph [ref=f13e28]: Editorial Archive
+          - heading "Monographs & Essays" [level=1] [ref=f13e29]
+        - paragraph [ref=f13e31]: Long-form writing, policy analysis, and methodological reflections on public systems and data architecture.
+      - paragraph [ref=f13e33]: No public monographs available in the archive.
+  - contentinfo [ref=f13e34]:
+    - generic [ref=f13e35]:
+      - generic [ref=f13e36]:
+        - generic [ref=f13e37]:
+          - link "Dhanush Mendu" [ref=f13e38] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f13e39]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f13e40]:
+          - heading "Navigate" [level=3] [ref=f13e41]
+          - list [ref=f13e42]:
+            - listitem [ref=f13e43]:
+              - link "Work" [ref=f13e44] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f13e45]:
+              - link "Research" [ref=f13e46] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f13e47]:
+              - link "Writing" [ref=f13e48] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f13e49]:
+              - link "Journal" [ref=f13e50] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f13e51]:
+              - link "Archive" [ref=f13e52] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f13e53]:
+          - heading "Connect" [level=3] [ref=f13e54]
+          - list [ref=f13e55]:
+            - listitem [ref=f13e56]:
+              - link "LinkedIn" [ref=f13e57] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f13e60]:
+              - link "About" [ref=f13e61] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f13e62]:
+        - paragraph [ref=f13e63]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f13e65]: VER 08/26

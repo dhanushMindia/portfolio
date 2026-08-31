@@ -1,0 +1,162 @@
+- generic [active] [ref=f53e1]:
+  - banner [ref=f53e2]:
+    - generic [ref=f53e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f53e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f53e7]: Dhanush Mendu
+        - generic [ref=f53e8]: Research & Analysis Archive
+      - navigation [ref=f53e9]:
+        - link "Work" [ref=f53e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f53e11] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f53e12] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f53e13] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f53e14] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f53e15] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f53e16] [cursor=pointer]:
+          - generic [ref=f53e19]: Catalog
+          - generic [ref=f53e20]: ⌘K
+  - main [ref=f53e23]:
+    - generic [ref=f53e24]:
+      - generic [ref=f53e26]:
+        - generic [ref=f53e27]:
+          - generic [ref=f53e28]: Personal Research Archive / Policy Data Laboratory
+          - generic [ref=f53e33]:
+            - heading "Dhanush Mendu" [level=1] [ref=f53e34]
+            - paragraph [ref=f53e35]: Quantitative public policy research, fiscal evidence, and field notes arranged as a living editorial record.
+          - generic [ref=f53e37]:
+            - generic [ref=f53e38]:
+              - paragraph [ref=f53e39]: Current question
+              - paragraph [ref=f53e40]: How local wage policy moves through firms, workers, and budgets.
+            - generic [ref=f53e41]:
+              - paragraph [ref=f53e42]: Method
+              - paragraph [ref=f53e43]: Applied econometrics, public datasets, and structured field documentation.
+            - generic [ref=f53e44]:
+              - paragraph [ref=f53e45]: Archive state
+              - paragraph [ref=f53e46]: 1 projects / 0 essays / 1 logs
+        - generic [ref=f53e52]:
+          - generic [ref=f53e53]:
+            - generic [ref=f53e54]: Evidence Instrument
+            - generic [ref=f53e55]: LIVE CANVAS
+          - generic [ref=f53e56]:
+            - generic [ref=f53e57]:
+              - paragraph [ref=f53e58]: Lead dossier
+              - paragraph [ref=f53e59]: Minimum Wage Impact Analysis
+            - generic [ref=f53e60]:
+              - paragraph [ref=f53e61]: Latest note
+              - paragraph [ref=f53e62]: WK 1
+      - generic [ref=f53e64]:
+        - generic [ref=f53e65]:
+          - paragraph [ref=f53e66]: Public inquiries
+          - paragraph [ref=f53e67]: "0"
+        - generic [ref=f53e68]:
+          - paragraph [ref=f53e69]: Monograph essays
+          - paragraph [ref=f53e70]: "0"
+        - generic [ref=f53e71]:
+          - paragraph [ref=f53e72]: Continuous logs
+          - paragraph [ref=f53e73]: "0"
+        - generic [ref=f53e74]:
+          - paragraph [ref=f53e75]: Indexed domains
+          - paragraph [ref=f53e76]: "0"
+      - generic [ref=f53e77]:
+        - generic [ref=f53e79]:
+          - generic [ref=f53e80]:
+            - paragraph [ref=f53e81]: Current Thinking
+            - heading "What the archive is tracking now" [level=2] [ref=f53e82]
+          - generic [ref=f53e83]:
+            - link "Active case study Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. Open dossier ->" [ref=f53e84] [cursor=pointer]:
+              - /url: /work/minimum-wage-impact-analysis
+              - generic [ref=f53e85]:
+                - paragraph [ref=f53e86]: Active case study
+                - heading "Minimum Wage Impact Analysis" [level=3] [ref=f53e87]
+                - paragraph [ref=f53e88]: Analysis of minimum wage increases on local small businesses using county employment data.
+              - generic [ref=f53e89]: Open dossier ->
+            - link "Latest monograph No public essay yet Read essay ->" [ref=f53e90] [cursor=pointer]:
+              - /url: /writing
+              - generic [ref=f53e91]:
+                - paragraph [ref=f53e92]: Latest monograph
+                - heading "No public essay yet" [level=3] [ref=f53e93]
+              - generic [ref=f53e94]: Read essay ->
+        - link "Featured inquiry Economic Policy Data Analysis Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. Visual evidence Treatment and outcome distribution under review." [ref=f53e97] [cursor=pointer]:
+          - /url: /work/minimum-wage-impact-analysis
+          - generic [ref=f53e98]:
+            - generic [ref=f53e99]:
+              - generic [ref=f53e100]: Featured inquiry
+              - generic [ref=f53e101]: Economic Policy
+              - generic [ref=f53e102]: Data Analysis
+            - heading "Minimum Wage Impact Analysis" [level=2] [ref=f53e103]
+            - paragraph [ref=f53e104]: Analysis of minimum wage increases on local small businesses using county employment data.
+          - generic [ref=f53e106]:
+            - paragraph [ref=f53e107]: Visual evidence
+            - paragraph [ref=f53e108]: Treatment and outcome distribution under review.
+        - generic [ref=f53e110]:
+          - generic [ref=f53e111]:
+            - paragraph [ref=f53e112]: Research Domains
+            - heading "Themes behave like threads, not categories." [level=2] [ref=f53e113]
+            - link "View domain map ->" [ref=f53e114] [cursor=pointer]:
+              - /url: /research
+          - generic [ref=f53e115]:
+            - link "01 Data Analysis 1 records" [ref=f53e116] [cursor=pointer]:
+              - /url: /research
+              - generic [ref=f53e117]: "01"
+              - generic [ref=f53e118]: Data Analysis
+              - generic [ref=f53e119]: 1 records
+            - link "02 Economic Policy 1 records" [ref=f53e120] [cursor=pointer]:
+              - /url: /research
+              - generic [ref=f53e121]: "02"
+              - generic [ref=f53e122]: Economic Policy
+              - generic [ref=f53e123]: 1 records
+        - generic [ref=f53e125]:
+          - generic [ref=f53e126]:
+            - paragraph [ref=f53e127]: Weekly field note
+            - paragraph [ref=f53e128]: WK 1
+          - generic [ref=f53e129]:
+            - 'heading "Week 1: Onboarding and Initial Data Collection" [level=2] [ref=f53e130]'
+            - paragraph [ref=f53e131]: Onboarding at CSPR, setting up development environment, and beginning initial data collection for the wage study.
+          - link "Open timeline ->" [ref=f53e133] [cursor=pointer]:
+            - /url: /journal
+        - generic [ref=f53e136]:
+          - paragraph [ref=f53e137]: Platform Ethos
+          - blockquote [ref=f53e138]: Evidence is not static documentation; it is a continuously evolving dialogue with public data and fiscal realities.
+  - contentinfo [ref=f53e139]:
+    - generic [ref=f53e140]:
+      - generic [ref=f53e141]:
+        - generic [ref=f53e142]:
+          - link "Dhanush Mendu" [ref=f53e143] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f53e144]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f53e145]:
+          - heading "Navigate" [level=3] [ref=f53e146]
+          - list [ref=f53e147]:
+            - listitem [ref=f53e148]:
+              - link "Work" [ref=f53e149] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f53e150]:
+              - link "Research" [ref=f53e151] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f53e152]:
+              - link "Writing" [ref=f53e153] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f53e154]:
+              - link "Journal" [ref=f53e155] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f53e156]:
+              - link "Archive" [ref=f53e157] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f53e158]:
+          - heading "Connect" [level=3] [ref=f53e159]
+          - list [ref=f53e160]:
+            - listitem [ref=f53e161]:
+              - link "LinkedIn" [ref=f53e162] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f53e165]:
+              - link "About" [ref=f53e166] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f53e167]:
+        - paragraph [ref=f53e168]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f53e170]: VER 08/26

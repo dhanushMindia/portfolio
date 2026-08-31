@@ -1,0 +1,113 @@
+[     431ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24650
+[  117540ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  118297ms] [LOG] [Fast Refresh] done in 758ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  139222ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  140112ms] [LOG] [Fast Refresh] done in 889ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  158199ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  158463ms] [LOG] [Fast Refresh] done in 264ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  158489ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:240
+[  158631ms] [ERROR] ./src/app/journal/page.tsx
+Error:   × Unexpected token `div`. Expected jsx identifier
+    ╭─[/Users/dhanushmendu/portfolio/src/app/journal/page.tsx:50:1]
+ 47 │   ).size;
+ 48 │ 
+ 49 │   return (
+ 50 │     <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1400px] mb-24">
+    ·      ───
+ 51 │       <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-structural pb-12">
+ 52 │         <ScrollReveal animation="fade-up" className="lg:col-span-7 space-y-6">
+ 53 │           <p className="type-metadata text-[var(--text-muted)]">Continuous Ledger</p>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/journal/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:50
+[  160194ms] [LOG] [Fast Refresh] done in 1704ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  161147ms] [LOG] [Fast Refresh] done in 2657ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:67
+[  161468ms] [ERROR] ./src/app/journal/page.tsx
+Error:   × Unexpected token `div`. Expected jsx identifier
+    ╭─[/Users/dhanushmendu/portfolio/src/app/journal/page.tsx:50:1]
+ 47 │   ).size;
+ 48 │ 
+ 49 │   return (
+ 50 │     <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1400px] mb-24">
+    ·      ───
+ 51 │       <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-structural pb-12">
+ 52 │         <ScrollReveal animation="fade-up" className="lg:col-span-7 space-y-6">
+ 53 │           <p className="type-metadata text-[var(--text-muted)]">Continuous Ledger</p>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/journal/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:50
+[  161807ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=1oqwi:0
+[  161930ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=1oqwi:0
+[  161965ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=1oqwi:0
+[  162036ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  162466ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  162520ms] ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Unexpected token `div`. Expected jsx identifier
+    ╭─[/Users/dhanushmendu/portfolio/src/app/journal/page.tsx:50:1]
+ 47 │   ).size;
+ 48 │ 
+ 49 │   return (
+ 50 │     <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1400px] mb-24">
+    ·      ───
+ 51 │       <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-structural pb-12">
+ 52 │         <ScrollReveal animation="fade-up" className="lg:col-span-7 space-y-6">
+ 53 │           <p className="type-metadata text-[var(--text-muted)]">Continuous Ledger</p>
+    ╰────
+
+
+Caused by:
+    Syntax Error
+    at processResult (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/compiled/webpack/bundle5.js:28:405677)
+    at <unknown> (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/compiled/webpack/bundle5.js:28:407465)
+    at <unknown> (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:8645)
+    at <unknown> (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5019)
+    at r.callback (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:4039)
+[  162519ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:41
+[  162521ms] [ERROR] ./src/app/journal/page.tsx
+Error:   × Unexpected token `div`. Expected jsx identifier
+    ╭─[/Users/dhanushmendu/portfolio/src/app/journal/page.tsx:50:1]
+ 47 │   ).size;
+ 48 │ 
+ 49 │   return (
+ 50 │     <div className="pt-12 md:pt-20 px-6 md:px-12 lg:px-24 mx-auto w-full max-w-[1400px] mb-24">
+    ·      ───
+ 51 │       <header className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-b border-structural pb-12">
+ 52 │         <ScrollReveal animation="fade-up" className="lg:col-span-7 space-y-6">
+ 53 │           <p className="type-metadata text-[var(--text-muted)]">Continuous Ledger</p>
+    ╰────
+
+Caused by:
+    Syntax Error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[  168340ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[  169586ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[  169735ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[  170203ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/4bb01ba9da5afaaf.webpack.hot-update.json:0
+[  170203ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:352
+[  170319ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  170604ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  170642ms] SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at loadManifest (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/load-manifest.js:36:25)
+    at DevServer.getNextFontManifest (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/next-server.js:778:47)
+    at DevServer.findPageComponents (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:609:43)
+    at async DevServer.renderPageComponent (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/base-server.js:2237:24)
+    at async DevServer.renderToResponseImpl (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/base-server.js:2288:32)
+    at async DevServer.pipeImpl (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/base-server.js:959:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/next-server.js:281:17)
+    at async DevServer.handleRequestImpl (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/base-server.js:853:17)
+    at async (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:371:20)
+    at async Span.traceAsyncFn (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/trace/trace.js:153:20)
+    at async DevServer.handleRequest (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:368:24)
+    at async invokeRender (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/lib/router-server.js:230:21)
+    at async handleRequest (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/lib/router-server.js:408:24)
+    at async requestHandlerImpl (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/lib/router-server.js:432:13)
+    at async Server.requestListener (file:///Users/dhanushmendu/portfolio/node_modules/next/dist/server/lib/start-server.js:146:13)
+[  170643ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:41

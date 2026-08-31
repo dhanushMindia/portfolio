@@ -1,0 +1,91 @@
+- generic [active] [ref=f7e1]:
+  - banner [ref=f7e2]:
+    - generic [ref=f7e4]:
+      - link "Dhanush Mendu" [ref=f7e6] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f7e8]:
+        - button "Search" [ref=f7e9] [cursor=pointer]
+        - button "Toggle menu" [ref=f7e13] [cursor=pointer]
+  - main [ref=f7e16]:
+    - generic [ref=f7e17]:
+      - generic [ref=f7e18]:
+        - generic [ref=f7e19]:
+          - paragraph [ref=f7e20]: Primary Directory
+          - heading "Selected Inquiries" [level=1] [ref=f7e21]
+        - paragraph [ref=f7e23]: A comprehensive index of policy research, fiscal architecture case studies, and applied quantitative methodology.
+      - generic [ref=f7e25]:
+        - generic [ref=f7e26]:
+          - paragraph [ref=f7e27]: Public dossiers
+          - paragraph [ref=f7e28]: "1"
+        - generic [ref=f7e29]:
+          - paragraph [ref=f7e30]: Research fields
+          - paragraph [ref=f7e31]: "2"
+        - generic [ref=f7e32]:
+          - paragraph [ref=f7e33]: Archive mode
+          - paragraph [ref=f7e34]: Curated
+      - generic [ref=f7e35]:
+        - generic [ref=f7e36]:
+          - generic [ref=f7e37]: "Filter Domain:"
+          - button "All Inquiries (1)" [ref=f7e38] [cursor=pointer]
+          - button "Data Analysis (1)" [ref=f7e39] [cursor=pointer]:
+            - text: Data Analysis
+            - generic [ref=f7e40]: (1)
+          - button "Economic Policy (1)" [ref=f7e41] [cursor=pointer]:
+            - text: Economic Policy
+            - generic [ref=f7e42]: (1)
+        - link "Lead Dossier 2024 Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. Economic Policy Data Analysis Open inquiry → Empirical Model Distribution & Variance OBS // 01" [ref=f7e45] [cursor=pointer]:
+          - /url: /work/minimum-wage-impact-analysis
+          - generic [ref=f7e46]:
+            - generic [ref=f7e47]:
+              - generic [ref=f7e48]:
+                - generic [ref=f7e49]: Lead Dossier
+                - generic [ref=f7e50]: "2024"
+              - heading "Minimum Wage Impact Analysis" [level=2] [ref=f7e51]
+              - paragraph [ref=f7e52]: Analysis of minimum wage increases on local small businesses using county employment data.
+            - generic [ref=f7e53]:
+              - generic [ref=f7e54]:
+                - generic [ref=f7e55]: Economic Policy
+                - generic [ref=f7e56]: Data Analysis
+              - generic [ref=f7e57]: Open inquiry →
+          - generic [ref=f7e59]:
+            - generic [ref=f7e60]:
+              - paragraph [ref=f7e61]: Empirical Model
+              - paragraph [ref=f7e62]: Distribution & Variance
+            - generic [ref=f7e63]: OBS // 01
+  - contentinfo [ref=f7e64]:
+    - generic [ref=f7e65]:
+      - generic [ref=f7e66]:
+        - generic [ref=f7e67]:
+          - link "Dhanush Mendu" [ref=f7e68] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f7e69]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f7e70]:
+          - heading "Navigate" [level=3] [ref=f7e71]
+          - list [ref=f7e72]:
+            - listitem [ref=f7e73]:
+              - link "Work" [ref=f7e74] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f7e75]:
+              - link "Research" [ref=f7e76] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f7e77]:
+              - link "Writing" [ref=f7e78] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f7e79]:
+              - link "Journal" [ref=f7e80] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f7e81]:
+              - link "Archive" [ref=f7e82] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f7e83]:
+          - heading "Connect" [level=3] [ref=f7e84]
+          - list [ref=f7e85]:
+            - listitem [ref=f7e86]:
+              - link "LinkedIn" [ref=f7e87] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f7e90]:
+              - link "About" [ref=f7e91] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f7e92]:
+        - paragraph [ref=f7e93]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f7e95]: VER 08/26

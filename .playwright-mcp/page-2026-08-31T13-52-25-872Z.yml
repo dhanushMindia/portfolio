@@ -1,0 +1,102 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - generic [ref=f4e4]:
+      - link "Dhanush Mendu Research & Analysis Archive" [ref=f4e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e7]: Dhanush Mendu
+        - generic [ref=f4e8]: Research & Analysis Archive
+      - navigation [ref=f4e9]:
+        - link "Work" [ref=f4e10] [cursor=pointer]:
+          - /url: /work
+        - link "Research" [ref=f4e12] [cursor=pointer]:
+          - /url: /research
+        - link "Writing" [ref=f4e13] [cursor=pointer]:
+          - /url: /writing
+        - link "Journal" [ref=f4e14] [cursor=pointer]:
+          - /url: /journal
+        - link "About" [ref=f4e15] [cursor=pointer]:
+          - /url: /about
+        - link "Archive" [ref=f4e16] [cursor=pointer]:
+          - /url: /archive
+        - button "Search Catalog" [ref=f4e17] [cursor=pointer]:
+          - generic [ref=f4e20]: Catalog
+          - generic [ref=f4e21]: ⌘K
+  - main [ref=f4e24]:
+    - generic [ref=f4e25]:
+      - generic [ref=f4e26]:
+        - generic [ref=f4e27]:
+          - paragraph [ref=f4e28]: Primary Directory
+          - heading "Selected Inquiries" [level=1] [ref=f4e29]
+        - paragraph [ref=f4e31]: A comprehensive index of policy research, fiscal architecture case studies, and applied quantitative methodology.
+      - generic [ref=f4e33]:
+        - generic [ref=f4e34]:
+          - paragraph [ref=f4e35]: Public dossiers
+          - paragraph [ref=f4e36]: "1"
+        - generic [ref=f4e37]:
+          - paragraph [ref=f4e38]: Research fields
+          - paragraph [ref=f4e39]: "2"
+        - generic [ref=f4e40]:
+          - paragraph [ref=f4e41]: Archive mode
+          - paragraph [ref=f4e42]: Curated
+      - generic [ref=f4e44]:
+        - generic [ref=f4e45]:
+          - generic [ref=f4e46]: "Filter By Field:"
+          - button "All Inquiries (1)" [ref=f4e47] [cursor=pointer]
+          - button "Data Analysis (1)" [ref=f4e48] [cursor=pointer]:
+            - text: Data Analysis
+            - generic [ref=f4e49]: (1)
+          - button "Economic Policy (1)" [ref=f4e50] [cursor=pointer]:
+            - text: Economic Policy
+            - generic [ref=f4e51]: (1)
+        - link "Lead Case Study 2024 Minimum Wage Impact Analysis Analysis of minimum wage increases on local small businesses using county employment data. Economic Policy Data Analysis Visual Artifact Quantitative Distribution" [ref=f4e54] [cursor=pointer]:
+          - /url: /work/minimum-wage-impact-analysis
+          - generic [ref=f4e55]:
+            - generic [ref=f4e56]:
+              - generic [ref=f4e57]:
+                - generic [ref=f4e58]: Lead Case Study
+                - generic [ref=f4e59]: "2024"
+              - heading "Minimum Wage Impact Analysis" [level=2] [ref=f4e60]
+              - paragraph [ref=f4e61]: Analysis of minimum wage increases on local small businesses using county employment data.
+              - generic [ref=f4e62]:
+                - generic [ref=f4e63]: Economic Policy
+                - generic [ref=f4e64]: Data Analysis
+            - generic [ref=f4e66]:
+              - paragraph [ref=f4e67]: Visual Artifact
+              - paragraph [ref=f4e68]: Quantitative Distribution
+  - contentinfo [ref=f4e69]:
+    - generic [ref=f4e70]:
+      - generic [ref=f4e71]:
+        - generic [ref=f4e72]:
+          - link "Dhanush Mendu" [ref=f4e73] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f4e74]: Research, public finance, data analysis and policy — building an evidence-based body of work.
+        - generic [ref=f4e75]:
+          - heading "Navigate" [level=3] [ref=f4e76]
+          - list [ref=f4e77]:
+            - listitem [ref=f4e78]:
+              - link "Work" [ref=f4e79] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f4e80]:
+              - link "Research" [ref=f4e81] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f4e82]:
+              - link "Writing" [ref=f4e83] [cursor=pointer]:
+                - /url: /writing
+            - listitem [ref=f4e84]:
+              - link "Journal" [ref=f4e85] [cursor=pointer]:
+                - /url: /journal
+            - listitem [ref=f4e86]:
+              - link "Archive" [ref=f4e87] [cursor=pointer]:
+                - /url: /archive
+        - generic [ref=f4e88]:
+          - heading "Connect" [level=3] [ref=f4e89]
+          - list [ref=f4e90]:
+            - listitem [ref=f4e91]:
+              - link "LinkedIn" [ref=f4e92] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dhanushmendu
+            - listitem [ref=f4e95]:
+              - link "About" [ref=f4e96] [cursor=pointer]:
+                - /url: /about
+      - generic [ref=f4e97]:
+        - paragraph [ref=f4e98]: © 2026 DHANUSH MENDU. ALL RIGHTS RESERVED.
+        - paragraph [ref=f4e100]: VER 08/26
