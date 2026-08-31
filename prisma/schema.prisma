@@ -41,6 +41,7 @@ model Project {
   subtitle         String?
   shortDescription String                @db.Text
   status           ProjectStatus         @default(DRAFT)
+  progressStatus   ProgressStatus        @default(ONGOING)
   visibility       Visibility            @default(PRIVATE)
   featured         Boolean               @default(false)
   featuredOrder    Int?
