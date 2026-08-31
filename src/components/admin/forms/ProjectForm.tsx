@@ -102,13 +102,13 @@ export function ProjectForm({ project }: ProjectFormProps) {
       )}
 
       {/* Basic fields */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Basic Information
         </h2>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Title *
           </label>
           <input
@@ -117,13 +117,13 @@ export function ProjectForm({ project }: ProjectFormProps) {
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             onBlur={generateSlug}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Project title"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Slug *
           </label>
           <input
@@ -132,30 +132,30 @@ export function ProjectForm({ project }: ProjectFormProps) {
             value={formData.slug}
             onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
             pattern="^[a-z0-9-]+$"
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="project-slug"
           />
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-xs text-[var(--text-muted)] mt-1">
             URL: /work/{formData.slug || "project-slug"}
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Short Description
           </label>
           <textarea
             value={formData.shortDescription}
             onChange={(e) => setFormData({ ...formData, shortDescription: e.target.value })}
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Brief description for cards and previews"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Start Date
             </label>
             <input
@@ -164,11 +164,11 @@ export function ProjectForm({ project }: ProjectFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, startDate: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               End Date
             </label>
             <input
@@ -177,20 +177,20 @@ export function ProjectForm({ project }: ProjectFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, endDate: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
       </div>
 
       {/* Relationships */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Relationships
         </h2>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Topics
           </label>
           <TaxonomySelector
@@ -200,11 +200,11 @@ export function ProjectForm({ project }: ProjectFormProps) {
           />
         </div>
 
-        <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <div className="pt-4 border-t border-structural">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Skills Applied
           </label>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <p className="text-sm text-[var(--text-muted)] mb-3">
             Only select skills where this project provides clear evidence of application.
           </p>
           <TaxonomySelector
@@ -216,8 +216,8 @@ export function ProjectForm({ project }: ProjectFormProps) {
       </div>
 
       {/* Content blocks */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-6">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)] mb-6">
           Content Blocks
         </h2>
         <BlockEditor
@@ -227,14 +227,14 @@ export function ProjectForm({ project }: ProjectFormProps) {
       </div>
 
       {/* Status & visibility */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Publishing & Status
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Visibility
             </label>
             <select
@@ -242,7 +242,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, visibility: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="PRIVATE">🔒 Private</option>
               <option value="UNLISTED">🔗 Unlisted</option>
@@ -251,13 +251,13 @@ export function ProjectForm({ project }: ProjectFormProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Lifecycle Status
             </label>
             <select
               value={formData.progressStatus}
               onChange={(e) => setFormData({ ...formData, progressStatus: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="PLANNING">Planning</option>
               <option value="ONGOING">Ongoing</option>
@@ -266,13 +266,13 @@ export function ProjectForm({ project }: ProjectFormProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Publish Status
             </label>
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="DRAFT">Draft</option>
               <option value="PUBLISHED">Published</option>
@@ -290,7 +290,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
             }
             className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           />
-          <span className="text-sm text-gray-700 dark:text-gray-300">
+          <span className="text-sm text-[var(--text-main)]">
             Feature on homepage
           </span>
         </label>
@@ -315,7 +315,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
         <Button
           type="button"
           onClick={() => router.back()}
-          className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 px-6 py-2 rounded-lg font-medium"
+          className="bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 text-[var(--text-main)] px-6 py-2 rounded-lg font-medium"
         >
           Cancel
         </Button>

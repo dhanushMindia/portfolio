@@ -16,10 +16,10 @@ export default async function AdminTopicsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif text-gray-900 dark:text-gray-50 mb-2">
+          <h1 className="text-3xl font-serif text-[var(--text-main)] mb-2">
             Topics
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-[var(--text-muted)]">
             {topics.length} topic{topics.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -32,8 +32,8 @@ export default async function AdminTopicsPage() {
       </div>
 
       {topics.length === 0 ? (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
+        <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-12 text-center">
+          <p className="text-[var(--text-muted)] mb-4">
             No topics yet
           </p>
           <Link
@@ -49,17 +49,17 @@ export default async function AdminTopicsPage() {
             <Link
               key={topic.id}
               href={`/admin/topics/${topic.id}`}
-              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+              className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
             >
-              <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-2">
+              <h3 className="text-lg font-medium text-[var(--text-main)] mb-2">
                 {topic.name}
               </h3>
               {topic.description && (
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">
+                <p className="text-sm text-[var(--text-muted)] mb-3 line-clamp-2">
                   {topic.description}
                 </p>
               )}
-              <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-3 text-xs text-[var(--text-muted)]">
                 <span>{topic._count.projects} projects</span>
                 <span>{topic._count.articles} articles</span>
               </div>

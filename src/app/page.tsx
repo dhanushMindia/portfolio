@@ -8,7 +8,7 @@ import { FiscalScatterPlot, DistributionCurve } from "@/components/ui/DataGraphi
 import { ScrollParallax, ScrollScale, ScrollTypography } from "@/components/ui/ScrollPhysics";
 
 export default async function HomePage() {
-  const [featuredProjects, recentArticles, recentJournals, topics] = await Promise.all([
+  const [featuredProjects, recentArticles, recentJournals, topics, profile] = await Promise.all([
     prisma.project.findMany({
       where: {
         status: "PUBLISHED",
@@ -66,6 +66,7 @@ export default async function HomePage() {
       },
       orderBy: { name: "asc" },
     }),
+    prisma.profile.findFirst(),
   ]);
 
   const [leadProject, ...otherProjects] = featuredProjects;
@@ -81,7 +82,7 @@ export default async function HomePage() {
               <div className="inline-flex items-center gap-3 border-y border-structural py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
                 <span className="type-metadata text-[var(--text-muted)]">
-                  Public Finance & Quantitative Analysis
+                  {profile?.tagline || "Public Finance & Quantitative Analysis"}
                 </span>
               </div>
             </ScrollReveal>
@@ -89,10 +90,12 @@ export default async function HomePage() {
             <ScrollReveal animation="fade-up" delay={100}>
               <div className="space-y-6">
                 <h1 className="type-display text-[var(--text-main)] font-serif">
-                  Dhanush Mendu
+                  {profile?.name || "Dhanush Mendu"}
                 </h1>
                 <p className="font-serif text-2xl md:text-3xl lg:text-4xl leading-tight text-[var(--text-main)] max-w-4xl text-balance">
-                  Quantitative data analysis, public economics, and state policy research structured as an evidence-based professional record.
+                  {profile?.bio
+                    ? profile.bio.split('\n')[0]
+                    : "Quantitative data analysis, public economics, and state policy research structured as an evidence-based professional record."}
                 </p>
               </div>
             </ScrollReveal>

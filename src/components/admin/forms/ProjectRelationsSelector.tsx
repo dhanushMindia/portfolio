@@ -52,7 +52,7 @@ export function ProjectRelationsSelector({
 
   if (loading) {
     return (
-      <div className="text-sm text-gray-500 dark:text-gray-400 animate-pulse">
+      <div className="text-sm text-[var(--text-muted)] animate-pulse">
         Loading projects...
       </div>
     );
@@ -60,7 +60,7 @@ export function ProjectRelationsSelector({
 
   if (projects.length === 0) {
     return (
-      <div className="text-sm text-gray-500 dark:text-gray-400">
+      <div className="text-sm text-[var(--text-muted)]">
         No other projects available to link.
       </div>
     );
@@ -87,7 +87,7 @@ export function ProjectRelationsSelector({
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search projects..."
-          className="w-full text-sm px-3 py-1.5 border border-gray-200 dark:border-gray-800 rounded bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+          className="w-full text-sm px-3 py-1.5 border border-structural rounded bg-[var(--bg-secondary)] text-[var(--text-main)]"
         />
       )}
 
@@ -117,7 +117,7 @@ export function ProjectRelationsSelector({
       )}
 
       {/* Available projects list */}
-      <div className="max-h-64 overflow-y-auto border border-gray-200 dark:border-gray-800 rounded p-2 space-y-1">
+      <div className="max-h-64 overflow-y-auto border border-structural rounded p-2 space-y-1">
         {filteredProjects.map((project) => {
           const isSelected = selectedProjectIds.includes(project.id);
           return (
@@ -125,8 +125,8 @@ export function ProjectRelationsSelector({
               key={project.id}
               className={`flex items-start p-2 text-sm rounded cursor-pointer transition-colors ${
                 isSelected
-                  ? "bg-gray-50 dark:bg-gray-800 font-medium"
-                  : "hover:bg-gray-50 dark:hover:bg-gray-800"
+                  ? "bg-[var(--bg-secondary)] font-medium"
+                  : "hover:bg-[var(--bg-secondary)]"
               }`}
             >
               <input
@@ -137,7 +137,7 @@ export function ProjectRelationsSelector({
               />
               <div className="flex-1 min-w-0">
                 <div className="truncate">{project.title}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">
+                <div className="text-xs text-[var(--text-muted)]">
                   /{project.slug}
                 </div>
               </div>
@@ -145,7 +145,7 @@ export function ProjectRelationsSelector({
           );
         })}
         {filteredProjects.length === 0 && (
-          <div className="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
+          <div className="text-sm text-[var(--text-muted)] text-center py-4">
             No projects match your search.
           </div>
         )}

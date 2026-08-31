@@ -26,7 +26,7 @@ export default async function EditProjectPage({
   return (
     <div className="max-w-4xl">
       <div className="mb-6">
-        <h1 className="text-3xl font-serif text-gray-900 dark:text-gray-50 mb-2">
+        <h1 className="text-3xl font-serif text-[var(--text-main)] mb-2">
           Edit Project: {project.title}
         </h1>
       </div>

@@ -20,10 +20,10 @@ export default async function AdminSkillsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif text-gray-900 dark:text-gray-50 mb-2">
+          <h1 className="text-3xl font-serif text-[var(--text-main)] mb-2">
             Skills
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-[var(--text-muted)]">
             {skills.length} skill{skills.length !== 1 ? "s" : ""} across{" "}
             {categories.length} categor{categories.length !== 1 ? "ies" : "y"}
           </p>
@@ -37,8 +37,8 @@ export default async function AdminSkillsPage() {
       </div>
 
       {skills.length === 0 ? (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
+        <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-12 text-center">
+          <p className="text-[var(--text-muted)] mb-4">
             No skills yet
           </p>
           <Link
@@ -54,7 +54,7 @@ export default async function AdminSkillsPage() {
             const categorySkills = skills.filter((s) => s.category === category);
             return (
               <div key={category}>
-                <h2 className="text-sm uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3 font-medium">
+                <h2 className="text-sm uppercase tracking-wider text-[var(--text-faint)] dark:text-[var(--text-muted)] mb-3 font-medium">
                   {category}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -62,12 +62,12 @@ export default async function AdminSkillsPage() {
                     <Link
                       key={skill.id}
                       href={`/admin/skills/${skill.id}`}
-                      className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-5 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                      className="bg-[var(--bg-primary)] border border-structural rounded-lg p-5 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
                     >
-                      <h3 className="font-medium text-gray-900 dark:text-gray-50 mb-2">
+                      <h3 className="font-medium text-[var(--text-main)] mb-2">
                         {skill.name}
                       </h3>
-                      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-3 text-xs text-[var(--text-muted)]">
                         <span>
                           {skill._count.projects} project
                           {skill._count.projects !== 1 ? "s" : ""}
@@ -87,7 +87,7 @@ export default async function AdminSkillsPage() {
           {/* Uncategorized skills */}
           {skills.filter((s) => !s.category).length > 0 && (
             <div>
-              <h2 className="text-sm uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3 font-medium">
+              <h2 className="text-sm uppercase tracking-wider text-[var(--text-faint)] dark:text-[var(--text-muted)] mb-3 font-medium">
                 Uncategorized
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -97,12 +97,12 @@ export default async function AdminSkillsPage() {
                     <Link
                       key={skill.id}
                       href={`/admin/skills/${skill.id}`}
-                      className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-5 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                      className="bg-[var(--bg-primary)] border border-structural rounded-lg p-5 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
                     >
-                      <h3 className="font-medium text-gray-900 dark:text-gray-50 mb-2">
+                      <h3 className="font-medium text-[var(--text-main)] mb-2">
                         {skill.name}
                       </h3>
-                      <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-3 text-xs text-[var(--text-muted)]">
                         <span>
                           {skill._count.projects} project
                           {skill._count.projects !== 1 ? "s" : ""}

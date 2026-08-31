@@ -37,7 +37,8 @@ export default async function ArticleDetailPage({
     select: { title: true, slug: true },
   });
 
-  const content = (article.content as unknown as ContentBlock[]) || [];
+  const isHtml = typeof article.content === "string";
+  const content = isHtml ? article.content : ((article.content as unknown as ContentBlock[]) || []);
 
   return (
     <article className="pt-12 md:pt-20 px-6 mx-auto w-full max-w-[800px] pb-24">
@@ -105,7 +106,14 @@ export default async function ArticleDetailPage({
 
       {/* 3. NARRATIVE CONTENT */}
       <div className="mt-16">
-        <BlockRenderer blocks={content} />
+        {isHtml ? (
+          <div
+            className="prose-editorial max-w-none type-body"
+            dangerouslySetInnerHTML={{ __html: content as string }}
+          />
+        ) : (
+          <BlockRenderer blocks={content as ContentBlock[]} />
+        )}
       </div>
 
       {/* 4. FOOTER */}

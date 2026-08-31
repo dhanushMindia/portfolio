@@ -2,9 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { TipTapEditor } from "@/components/admin/editor/TipTapEditor";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/Button";
 import { TaxonomySelector } from "@/components/admin/forms/TaxonomySelector";
+
+const TipTapEditor = dynamic(
+  () => import("@/components/admin/editor/TipTapEditor").then((mod) => mod.TipTapEditor),
+  { ssr: false, loading: () => <div className="h-[300px] animate-pulse bg-[var(--bg-secondary)] border border-structural rounded-md w-full" /> }
+);
 
 interface ArticleFormProps {
   article?: {
@@ -81,13 +86,13 @@ export function ArticleForm({ article }: ArticleFormProps) {
       )}
 
       {/* Basic fields */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Basic Information
         </h2>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Title *
           </label>
           <input
@@ -96,13 +101,13 @@ export function ArticleForm({ article }: ArticleFormProps) {
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             onBlur={generateSlug}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Article title"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Slug *
           </label>
           <input
@@ -111,29 +116,29 @@ export function ArticleForm({ article }: ArticleFormProps) {
             value={formData.slug}
             onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
             pattern="^[a-z0-9-]+$"
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="article-slug"
           />
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-xs text-[var(--text-muted)] mt-1">
             URL: /writing/{formData.slug || "article-slug"}
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Excerpt / Subtitle
           </label>
           <textarea
             value={formData.subtitle}
             onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Brief excerpt for cards and previews"
           />
         </div>
 
-        <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        <div className="pt-4 border-t border-structural">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Topics
           </label>
           <TaxonomySelector
@@ -145,8 +150,8 @@ export function ArticleForm({ article }: ArticleFormProps) {
       </div>
 
       {/* Content */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-6">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)] mb-6">
           Article Content
         </h2>
         <TipTapEditor
@@ -156,20 +161,20 @@ export function ArticleForm({ article }: ArticleFormProps) {
       </div>
 
       {/* Status & visibility */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Publishing
         </h2>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Status
             </label>
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="DRAFT">Draft</option>
               <option value="PUBLISHED">Published</option>
@@ -178,7 +183,7 @@ export function ArticleForm({ article }: ArticleFormProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Visibility
             </label>
             <select
@@ -186,7 +191,7 @@ export function ArticleForm({ article }: ArticleFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, visibility: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="PRIVATE">🔒 Private</option>
               <option value="UNLISTED">🔗 Unlisted</option>
@@ -215,7 +220,7 @@ export function ArticleForm({ article }: ArticleFormProps) {
         <Button
           type="button"
           onClick={() => router.back()}
-          className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 px-6 py-2 rounded-lg font-medium"
+          className="bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 text-[var(--text-main)] px-6 py-2 rounded-lg font-medium"
         >
           Cancel
         </Button>

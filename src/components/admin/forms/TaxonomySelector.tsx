@@ -97,7 +97,7 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
   };
 
   if (loading) {
-    return <div className="text-sm text-gray-500 animate-pulse">Loading {type}...</div>;
+    return <div className="text-sm text-[var(--text-muted)] animate-pulse">Loading {type}...</div>;
   }
 
   const exactMatch = items.find(i => i.name.toLowerCase() === search.toLowerCase());
@@ -146,11 +146,11 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
           }}
           onFocus={() => setIsOpen(true)}
           placeholder={`Search or create ${type}...`}
-          className="w-full text-sm px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full text-sm px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)] focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
 
         {isOpen && (search || unselectedFiltered.length > 0) && (
-          <div className="absolute z-10 mt-1 w-full max-h-60 overflow-y-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-lg">
+          <div className="absolute z-10 mt-1 w-full max-h-60 overflow-y-auto bg-[var(--bg-primary)] border border-structural rounded-lg shadow-lg">
             {unselectedFiltered.map(item => (
               <button
                 key={item.id}
@@ -160,7 +160,7 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
                   setSearch("");
                   setIsOpen(false);
                 }}
-                className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="w-full text-left px-4 py-2 text-sm text-[var(--text-main)] hover:bg-[var(--bg-secondary)] transition-colors"
               >
                 {item.name}
               </button>
@@ -171,14 +171,14 @@ export function TaxonomySelector({ type, selectedIds, onChange }: TaxonomySelect
                 type="button"
                 onClick={handleCreateNew}
                 disabled={isCreating}
-                className="w-full text-left px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors border-t border-gray-100 dark:border-gray-800"
+                className="w-full text-left px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors border-t border-structural"
               >
                 {isCreating ? "Creating..." : `+ Create "${search}"`}
               </button>
             )}
 
             {!search && unselectedFiltered.length === 0 && (
-              <div className="px-4 py-3 text-sm text-gray-500 text-center">
+              <div className="px-4 py-3 text-sm text-[var(--text-muted)] text-center">
                 All {type} are selected.
               </div>
             )}

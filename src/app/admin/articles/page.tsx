@@ -17,10 +17,10 @@ export default async function AdminArticlesPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif text-gray-900 dark:text-gray-50 mb-2">
+          <h1 className="text-3xl font-serif text-[var(--text-main)] mb-2">
             Articles
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-[var(--text-muted)]">
             {articles.length} article{articles.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -34,8 +34,8 @@ export default async function AdminArticlesPage() {
 
       {/* Articles list */}
       {articles.length === 0 ? (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
+        <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-12 text-center">
+          <p className="text-[var(--text-muted)] mb-4">
             No articles yet
           </p>
           <Link
@@ -51,15 +51,15 @@ export default async function AdminArticlesPage() {
             <Link
               key={article.id}
               href={`/admin/articles/${article.id}`}
-              className="block bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+              className="block bg-[var(--bg-primary)] border border-structural rounded-lg p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-1">
+                  <h3 className="text-lg font-medium text-[var(--text-main)] mb-1">
                     {article.title}
                   </h3>
                   {article.subtitle && (
-                    <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    <p className="text-sm text-[var(--text-muted)] line-clamp-2">
                       {article.subtitle}
                     </p>
                   )}
@@ -70,7 +70,7 @@ export default async function AdminArticlesPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+              <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
                 {article.topics.length > 0 && (
                   <span>
                     {article.topics.map((t) => t.topic.name).join(", ")}
@@ -97,7 +97,7 @@ function StatusBadge({ status }: { status: string }) {
   const colors = {
     DRAFT: "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400",
     PUBLISHED: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400",
-    ARCHIVED: "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400",
+    ARCHIVED: "bg-[var(--bg-secondary)] text-[var(--text-muted)]",
   };
 
   return (

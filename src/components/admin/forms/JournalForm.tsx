@@ -107,13 +107,13 @@ export function JournalForm({ entry }: JournalFormProps) {
       )}
 
       {/* Week details */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Week Info
         </h2>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Title *
           </label>
           <input
@@ -121,14 +121,14 @@ export function JournalForm({ entry }: JournalFormProps) {
             required
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="e.g. Week 1: Overview"
           />
         </div>
 
         <div className="grid grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Week Number *
             </label>
             <input
@@ -136,11 +136,11 @@ export function JournalForm({ entry }: JournalFormProps) {
               required
               value={formData.weekNumber}
               onChange={(e) => setFormData({ ...formData, weekNumber: parseInt(e.target.value) || 1 })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Start Date *
             </label>
             <input
@@ -150,11 +150,11 @@ export function JournalForm({ entry }: JournalFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, startDate: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               End Date *
             </label>
             <input
@@ -164,38 +164,38 @@ export function JournalForm({ entry }: JournalFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, endDate: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             />
           </div>
         </div>
       </div>
 
       {/* Content fields - Dr. Subramanian 4-tier Framework */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
         <div>
-          <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+          <h2 className="text-lg font-medium text-[var(--text-main)]">
             Project Log (Execution & Impact)
           </h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs text-[var(--text-muted)] mt-0.5">
             Document the specific research directive, methodology executed, and measurable outcomes.
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             1. Context & Objectives (Focus)
           </label>
           <textarea
             value={formData.focus}
             onChange={(e) => setFormData({ ...formData, focus: e.target.value })}
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="e.g. Initiated Telangana State Scan: Macroeconomic & Fiscal Profile (2014-2024)..."
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             2. Action Taken & Methodology (Work Completed) *
           </label>
           <textarea
@@ -205,13 +205,13 @@ export function JournalForm({ entry }: JournalFormProps) {
               setFormData({ ...formData, workCompleted: e.target.value })
             }
             rows={4}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="Detailed methodology, dataset sourcing, modeling steps, and quantitative analysis..."
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             3. Impact & Deliverables (Outcomes)
           </label>
           <textarea
@@ -220,25 +220,25 @@ export function JournalForm({ entry }: JournalFormProps) {
               setFormData({ ...formData, outcomes: e.target.value })
             }
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="Summary tables generated, briefs published, datasets cleaned..."
           />
         </div>
       </div>
 
       {/* Weekly Reflection Ledger */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
         <div>
-          <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+          <h2 className="text-lg font-medium text-[var(--text-main)]">
             Weekly Reflection & Learning Ledger
           </h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs text-[var(--text-muted)] mt-0.5">
             Analytical reflections, qualitative insights, bottlenecks encountered, and forward direction.
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Wins & Milestones (Reflection)
           </label>
           <textarea
@@ -247,13 +247,13 @@ export function JournalForm({ entry }: JournalFormProps) {
               setFormData({ ...formData, reflection: e.target.value })
             }
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="Key successes, breakthroughs in analysis, supervisor feedback..."
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Roadblocks & Challenges
           </label>
           <textarea
@@ -262,13 +262,13 @@ export function JournalForm({ entry }: JournalFormProps) {
               setFormData({ ...formData, challenges: e.target.value })
             }
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="Data discrepancies, missing time-series records, methodological roadblocks..."
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
             Key Learnings & Next Steps
           </label>
           <textarea
@@ -277,15 +277,15 @@ export function JournalForm({ entry }: JournalFormProps) {
               setFormData({ ...formData, nextWeekFocus: e.target.value })
             }
             rows={2}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+            className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             placeholder="Concepts mastered, next week's focus areas and analytical plans..."
           />
         </div>
       </div>
 
       {/* Linked Projects */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Linked Projects
         </h2>
         <JournalProjectLinker
@@ -295,8 +295,8 @@ export function JournalForm({ entry }: JournalFormProps) {
       </div>
 
       {/* Skills Used */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Skills Used
         </h2>
         <TaxonomySelector
@@ -307,9 +307,9 @@ export function JournalForm({ entry }: JournalFormProps) {
       </div>
 
       {/* Attachments */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+          <h2 className="text-lg font-medium text-[var(--text-main)]">
             Attachments & Assets
           </h2>
           <Button
@@ -321,20 +321,20 @@ export function JournalForm({ entry }: JournalFormProps) {
                 { id: `temp-${Date.now()}`, title: '', url: '', fileType: 'PDF', size: 0 }
               ]
             })}
-            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-md"
+            className="px-3 py-1 bg-[var(--bg-secondary)] text-sm rounded-md"
           >
             + Add Attachment
           </Button>
         </div>
 
         {formData.attachments.length === 0 ? (
-          <p className="text-sm text-gray-500 italic">No attachments added yet.</p>
+          <p className="text-sm text-[var(--text-muted)] italic">No attachments added yet.</p>
         ) : (
           <div className="space-y-4">
             {formData.attachments.map((attachment, index) => (
-              <div key={attachment.id} className="grid grid-cols-12 gap-3 items-center border border-gray-200 dark:border-gray-800 p-3 rounded-md">
+              <div key={attachment.id} className="grid grid-cols-12 gap-3 items-center border border-structural p-3 rounded-md">
                 <div className="col-span-4">
-                  <label className="block text-xs mb-1 text-gray-500">Title</label>
+                  <label className="block text-xs mb-1 text-[var(--text-muted)]">Title</label>
                   <input
                     type="text"
                     value={attachment.title}
@@ -343,12 +343,12 @@ export function JournalForm({ entry }: JournalFormProps) {
                       newAttachments[index].title = e.target.value;
                       setFormData({ ...formData, attachments: newAttachments });
                     }}
-                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                    className="w-full px-2 py-1 text-sm border border-[var(--border-strong)] rounded bg-[var(--bg-primary)] text-[var(--text-main)]"
                     placeholder="e.g. Q1 Fiscal Report"
                   />
                 </div>
                 <div className="col-span-4">
-                  <label className="block text-xs mb-1 text-gray-500">URL</label>
+                  <label className="block text-xs mb-1 text-[var(--text-muted)]">URL</label>
                   <input
                     type="text"
                     value={attachment.url}
@@ -357,12 +357,12 @@ export function JournalForm({ entry }: JournalFormProps) {
                       newAttachments[index].url = e.target.value;
                       setFormData({ ...formData, attachments: newAttachments });
                     }}
-                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                    className="w-full px-2 py-1 text-sm border border-[var(--border-strong)] rounded bg-[var(--bg-primary)] text-[var(--text-main)]"
                     placeholder="https://..."
                   />
                 </div>
                 <div className="col-span-2">
-                  <label className="block text-xs mb-1 text-gray-500">Type</label>
+                  <label className="block text-xs mb-1 text-[var(--text-muted)]">Type</label>
                   <select
                     value={attachment.fileType}
                     onChange={(e) => {
@@ -370,7 +370,7 @@ export function JournalForm({ entry }: JournalFormProps) {
                       newAttachments[index].fileType = e.target.value;
                       setFormData({ ...formData, attachments: newAttachments });
                     }}
-                    className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+                    className="w-full px-2 py-1 text-sm border border-[var(--border-strong)] rounded bg-[var(--bg-primary)] text-[var(--text-main)]"
                   >
                     <option value="PDF">PDF</option>
                     <option value="DOCUMENT">Document</option>
@@ -398,20 +398,20 @@ export function JournalForm({ entry }: JournalFormProps) {
       </div>
 
       {/* Status & visibility */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-6">
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+      <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-6 space-y-6">
+        <h2 className="text-lg font-medium text-[var(--text-main)]">
           Publishing
         </h2>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Status
             </label>
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             >
               <option value="DRAFT">Draft</option>
               <option value="PUBLISHED">Published</option>
@@ -420,7 +420,7 @@ export function JournalForm({ entry }: JournalFormProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-[var(--text-main)] mb-2">
               Visibility
             </label>
             <select
@@ -428,7 +428,7 @@ export function JournalForm({ entry }: JournalFormProps) {
               onChange={(e) =>
                 setFormData({ ...formData, visibility: e.target.value })
               }
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+              className="w-full px-3 py-2 border border-[var(--border-strong)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-main)]"
             >
               <option value="PRIVATE">🔒 Private</option>
               <option value="UNLISTED">🔗 Unlisted</option>
@@ -461,7 +461,7 @@ export function JournalForm({ entry }: JournalFormProps) {
         <Button
           type="button"
           onClick={() => router.back()}
-          className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 px-6 py-2 rounded-lg font-medium"
+          className="bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 text-[var(--text-main)] px-6 py-2 rounded-lg font-medium"
         >
           Cancel
         </Button>

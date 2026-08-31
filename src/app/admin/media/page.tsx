@@ -19,10 +19,10 @@ export default async function AdminMediaPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-serif text-gray-900 dark:text-gray-50 mb-2">
+          <h1 className="text-3xl font-serif text-[var(--text-main)] mb-2">
             Media Library
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-[var(--text-muted)]">
             {assets.length} file{assets.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -35,8 +35,8 @@ export default async function AdminMediaPage() {
       </div>
 
       {assets.length === 0 ? (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
+        <div className="bg-[var(--bg-primary)] border border-structural rounded-lg p-12 text-center">
+          <p className="text-[var(--text-muted)] mb-4">
             No media assets yet
           </p>
           <Link
@@ -51,9 +51,9 @@ export default async function AdminMediaPage() {
           {assetsWithUrls.map((asset) => (
             <div
               key={asset.id}
-              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden group"
+              className="bg-[var(--bg-primary)] border border-structural rounded-lg overflow-hidden group"
             >
-              <div className="aspect-video bg-gray-100 dark:bg-gray-950 relative overflow-hidden flex items-center justify-center">
+              <div className="aspect-video bg-[var(--bg-secondary)] relative overflow-hidden flex items-center justify-center">
                 {asset.fileType === "image" ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -62,7 +62,7 @@ export default async function AdminMediaPage() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="text-4xl text-gray-400">
+                  <div className="text-4xl text-[var(--text-faint)]">
                     {asset.fileType === "pdf" ? "📄" : "📁"}
                   </div>
                 )}
@@ -80,11 +80,11 @@ export default async function AdminMediaPage() {
               </div>
 
               <div className="p-3">
-                <h3 className="font-medium text-gray-900 dark:text-gray-50 text-sm truncate" title={asset.title}>
+                <h3 className="font-medium text-[var(--text-main)] text-sm truncate" title={asset.title}>
                   {asset.title}
                 </h3>
                 <div className="flex items-center justify-between mt-1">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 uppercase">
+                  <p className="text-xs text-[var(--text-muted)] uppercase">
                     {asset.fileType}
                   </p>
                   <VisibilityBadge visibility={asset.visibility} />

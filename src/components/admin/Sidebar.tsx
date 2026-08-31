@@ -61,18 +61,18 @@ export function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 min-h-screen border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 flex flex-col">
+    <aside className="w-64 min-h-screen border-r border-structural bg-[var(--bg-secondary)] flex flex-col">
       {/* Logo */}
-      <div className="p-6 border-b border-gray-200 dark:border-gray-800">
+      <div className="p-6 border-b border-structural">
         <Link href="/admin" className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-gray-900 dark:bg-gray-50 flex items-center justify-center">
-            <span className="text-white dark:text-gray-900 text-xs font-bold">D</span>
+          <div className="w-7 h-7 rounded-md bg-[var(--text-main)] flex items-center justify-center">
+            <span className="text-[var(--bg-primary)] text-xs font-bold">D</span>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-900 dark:text-gray-50 leading-none">
+            <p className="text-sm font-medium text-[var(--text-main)] leading-none">
               Research Platform
             </p>
-            <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-0.5">
+            <p className="text-[10px] text-[var(--text-faint)] dark:text-[var(--text-muted)] mt-0.5">
               Admin
             </p>
           </div>
@@ -80,29 +80,29 @@ export function AdminSidebar() {
       </div>
 
       {/* Quick Actions */}
-      <div className="px-4 py-4 border-b border-gray-200 dark:border-gray-800">
+      <div className="px-4 py-4 border-b border-structural">
         <div className="grid grid-cols-2 gap-2">
           <Link
             href="/admin/projects/new"
-            className="text-xs text-center px-3 py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+            className="text-xs text-center px-3 py-2 bg-[var(--bg-primary)] border border-structural rounded-md text-[var(--text-main)] hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
           >
             + Project
           </Link>
           <Link
             href="/admin/journal/new"
-            className="text-xs text-center px-3 py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+            className="text-xs text-center px-3 py-2 bg-[var(--bg-primary)] border border-structural rounded-md text-[var(--text-main)] hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
           >
             + Week
           </Link>
           <Link
             href="/admin/articles/new"
-            className="text-xs text-center px-3 py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+            className="text-xs text-center px-3 py-2 bg-[var(--bg-primary)] border border-structural rounded-md text-[var(--text-main)] hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
           >
             + Article
           </Link>
           <Link
             href="/admin/media"
-            className="text-xs text-center px-3 py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+            className="text-xs text-center px-3 py-2 bg-[var(--bg-primary)] border border-structural rounded-md text-[var(--text-main)] hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
           >
             + Upload
           </Link>
@@ -113,7 +113,7 @@ export function AdminSidebar() {
       <nav className="flex-1 px-3 py-4 space-y-6 overflow-y-auto">
         {navGroups.map((group) => (
           <div key={group.title}>
-            <h3 className="px-3 text-[10px] font-medium uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">
+            <h3 className="px-3 text-[10px] font-medium uppercase tracking-widest text-[var(--text-faint)] dark:text-[var(--text-muted)] mb-2">
               {group.title}
             </h3>
             <ul className="space-y-0.5">
@@ -128,8 +128,8 @@ export function AdminSidebar() {
                       href={item.href}
                       className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${
                         isActive
-                          ? "bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 shadow-sm border border-gray-200 dark:border-gray-800"
-                          : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-white dark:hover:bg-gray-900"
+                          ? "bg-[var(--bg-primary)] text-[var(--text-main)] shadow-sm border border-structural"
+                          : "text-[var(--text-muted)] hover:text-gray-900 dark:hover:text-gray-50 hover:bg-white dark:hover:bg-gray-900"
                       }`}
                     >
                       <svg
@@ -156,11 +156,11 @@ export function AdminSidebar() {
       </nav>
 
       {/* Bottom Section */}
-      <div className="p-4 border-t border-gray-200 dark:border-gray-800 space-y-2">
+      <div className="p-4 border-t border-structural space-y-2">
         <Link
           href="/"
           target="_blank"
-          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--text-muted)] hover:text-gray-900 dark:hover:text-gray-50 transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -169,7 +169,7 @@ export function AdminSidebar() {
         </Link>
         <button
           onClick={() => signOut({ callbackUrl: "/login" })}
-          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors w-full"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--text-muted)] hover:text-red-600 dark:hover:text-red-400 transition-colors w-full"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
