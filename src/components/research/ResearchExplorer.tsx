@@ -63,14 +63,17 @@ export function ResearchExplorer({ topics }: ResearchExplorerProps) {
   return (
     <div className="space-y-16">
       {/* Search Bar */}
-      <div className="sticky top-20 z-20 bg-[var(--bg-primary)]/90 backdrop-blur-md py-4 border-b border-structural">
-        <div className="relative">
+      <div className="sticky top-20 z-20 bg-[var(--bg-primary)]/95 backdrop-blur-xl py-4 border-b border-structural">
+        <div className="relative flex items-center gap-3 px-6 py-4 border border-structural bg-[var(--bg-primary)] shadow-sm focus-within:border-structural-strong transition-colors">
+          <svg className="w-5 h-5 text-[var(--text-muted)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search domains, topics, or specific inquiries..."
-            className="w-full bg-[var(--bg-secondary)]/50 border border-structural px-6 py-4 text-base focus:outline-none focus:border-[var(--text-main)] transition-colors placeholder-[var(--text-faint)] type-ui"
+            className="w-full bg-transparent text-[var(--text-main)] placeholder:text-[var(--text-faint)] focus:outline-none font-serif text-lg md:text-xl"
           />
           {searchQuery && (
             <button

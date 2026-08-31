@@ -245,15 +245,6 @@ export default async function HomePage() {
                 <div className="lg:col-span-12 xl:col-span-5 min-h-[400px] bg-[var(--bg-secondary)] relative overflow-hidden flex items-end">
                   <DistributionCurve className="absolute inset-0 w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-90" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent opacity-80 pointer-events-none" />
-                  <div className="relative z-10 w-full border-t border-structural bg-[var(--bg-primary)]/90 backdrop-blur-md p-6 lg:p-8 flex items-center justify-between">
-                    <div>
-                      <p className="type-metadata text-[var(--accent)]">Visual evidence</p>
-                      <p className="font-serif text-xl sm:text-2xl text-[var(--text-main)] mt-2 leading-snug">
-                        Data overview
-                      </p>
-                    </div>
-                    <span className="type-metadata text-[var(--text-faint)] hidden sm:block">DATA LAB</span>
-                  </div>
                 </div>
               </Link>
             </ScrollReveal>

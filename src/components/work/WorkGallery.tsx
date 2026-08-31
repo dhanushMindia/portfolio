@@ -143,15 +143,6 @@ export function WorkGallery({ projects, allTopics }: WorkGalleryProps) {
                     <div className="xl:col-span-5 min-h-[320px] bg-[var(--bg-secondary)] relative overflow-hidden flex items-end">
                       <DistributionCurve className="absolute inset-0 w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen opacity-85" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent opacity-80 pointer-events-none" />
-                      <div className="relative z-10 w-full border-t border-structural bg-[var(--bg-primary)]/90 backdrop-blur-md p-5 flex items-center justify-between">
-                        <div>
-                          <p className="type-metadata text-[var(--accent)]">Visual evidence</p>
-                          <p className="font-serif text-lg text-[var(--text-main)] mt-1">
-                            Data overview
-                          </p>
-                        </div>
-                        <span className="type-metadata text-[var(--text-faint)]">OBS // 01</span>
-                      </div>
                     </div>
                   </Link>
                 </motion.div>
