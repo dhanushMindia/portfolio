@@ -27,10 +27,10 @@ async function main() {
   // 2. Create admin user
   const hashedPassword = await bcrypt.hash("admin123", 10);
   const user = await prisma.user.upsert({
-    where: { email: "dhanush.mendu@example.com" },
+    where: { email: "dhanush.mendu@gmail.com" },
     update: {},
     create: {
-      email: "dhanush.mendu@example.com",
+      email: "dhanush.mendu@gmail.com",
       password: hashedPassword,
       name: "Dhanush Mendu",
     },
@@ -46,7 +46,7 @@ async function main() {
       currentRole: "Research Intern (CSPR)",
       currentFocus: ["Public Finance", "Indian Economy", "Data Analysis", "Research Communication"],
       linkedinUrl: "http://www.linkedin.com/in/dhanushmendu",
-      email: "dhanush.mendu@example.com",
+      email: "dhanush.mendu@gmail.com",
     },
   });
 

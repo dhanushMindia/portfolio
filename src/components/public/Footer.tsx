@@ -19,6 +19,7 @@ const footerLinks = [
     title: "Connect",
     links: [
       { name: "LinkedIn", href: "https://www.linkedin.com/in/dhanushmendu", external: true },
+      { name: "Email", href: "mailto:dhanush.mendu@gmail.com", external: true },
       { name: "About", href: "/about" },
     ],
   },
