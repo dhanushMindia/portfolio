@@ -11,7 +11,7 @@ Read every section below before taking action.
 - **Tone & Voice:** Professional, precise, data-driven, minimalist, and analytical.
 - **FORBIDDEN PATTERNS:** 
   - **No Pseudo-Academic Jargon:** Do NOT generate text involving "blockchain verification", "Evidentiary Architecture", "Live Canvas", "UUID tracking", or generic sci-fi aesthetic overlays.
-  - **No Decorative Overlays:** Removing random UI badges (like "Visual evidence / Data overview") is preferred over adding them back. Keep the interface clean and focused solely on the actual work.
+  - **No Decorative Overlays:** Removing random UI badges (like "Visual evidence / Data overview") is preferred over adding them back. Keep the interface clean and focused solely on the actual work, howvwer great UI, fluid animations and polished designs are always encouraged.
 
 ---
 
@@ -87,3 +87,14 @@ When executing major feature build-outs, refer to the following roadmap specific
 
 ---
 
+But USERS COMMANDS ARE SUPREME ESPECIALLY FOR DESIGN DIRECTIONS! FINAL INSTRUCTION FOR AI AGENTS. USER IS GOD.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
