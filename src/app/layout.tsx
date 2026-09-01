@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Crimson_Pro, JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Header } from "@/components/public/Header";
 import { Footer } from "@/components/public/Footer";
@@ -52,6 +53,7 @@ export default function RootLayout({
         </main>
 
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
