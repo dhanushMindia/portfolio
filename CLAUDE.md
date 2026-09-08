@@ -15,7 +15,7 @@ Read every section below before taking action.
 
 ---
 
-## 2. STRUCTURAL CACHING & PERFORMANCE (ZERO TOLERANCE)
+## 2. STRUCTURAmy pL CACHING & PERFORMANCE (ZERO TOLERANCE)
 The portfolio uses Incremental Static Regeneration (ISR) to achieve sub-millisecond edge load speeds.
 - **PUBLIC PAGES (`src/app/page.tsx`, `src/app/work/...`, `src/app/research/...`, etc.):** 
   - **MANDATORY:** You MUST use `export const revalidate = 60;` (or similar).

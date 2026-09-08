@@ -138,9 +138,12 @@ export function Footer() {
             © {new Date().getFullYear()} DHANUSH MENDU. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-6">
-            <p className="type-metadata text-[var(--text-faint)] text-[10px]">
+            <Link
+              href="/notes/login"
+              className="type-metadata text-[var(--text-faint)] hover:text-[var(--text-muted)] text-[10px] transition-colors"
+            >
               VER {new Date().toLocaleDateString("en-US", { month: "2-digit", year: "2-digit" })}
-            </p>
+            </Link>
             <div className="border border-structural">
               <ThemeToggle />
             </div>

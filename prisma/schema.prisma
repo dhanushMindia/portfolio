@@ -16,6 +16,8 @@ model User {
   email     String   @unique
   password  String
   name      String
+  folders   Folder[]
+  notes     Note[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -260,4 +262,38 @@ model Attachment {
   journalEntryId String
   journalEntry   JournalEntry  @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
   createdAt      DateTime      @default(now())
+}
+
+model Folder {
+  id        String   @id @default(cuid())
+  name      String
+  icon      String?
+  color     String?
+  parentId  String?
+  parent    Folder?  @relation("FolderHierarchy", fields: [parentId], references: [id], onDelete: Cascade)
+  children  Folder[] @relation("FolderHierarchy")
+  notes     Note[]
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Note {
+  id          String   @id @default(cuid())
+  title       String
+  icon        String?
+  content     Json     @default("[]")
+  folderId    String?
+  folder      Folder?  @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isFavorite  Boolean  @default(false)
+  isArchived  Boolean  @default(false)
+  coverImage  String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastEditedAt DateTime @default(now())
 }
