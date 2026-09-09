@@ -69,7 +69,55 @@ If tasked to build new features, adhere to the established folder structures:
 
 ---
 
-## 7. ONGOING ARCHITECTURAL ROADMAP (CONTEXT)
+## 7. PRIVATE NOTES SYSTEM (`/notes/*`)
+The portfolio includes a **fully functional Notion Pro clone** for private personal notes, accessible only to the authenticated user.
+
+- **Authentication & Access:**
+  - Entry point: Footer version text (`VER MM/YY`) links to `/notes/login`
+  - Uses **JWT authentication via `jose`** (independent from NextAuth)
+  - Token stored in `notes-auth` httpOnly cookie (30-day expiry)
+  - Middleware protects `/notes/*` routes (excluding `/notes/login`)
+  - Auth utilities: `src/lib/notes/jwt.ts`
+
+- **Database Models:**
+  - **Note**: `title`, `content` (Json/BlockNote blocks), `icon`, `coverImage`, `folderId`, `userId`, `isFavorite`, `isArchived`, `order`, timestamps
+  - **Folder**: Hierarchical self-relations (`parentId`), `name`, `icon`, `color`, `userId`, `order`, timestamps
+  - Both enforce cascade deletion when `User` is deleted
+  - Migration: `20260908074729_add_notes_and_folders`
+
+- **Core Components:**
+  - **`NotesEditor`** (`src/components/notes/NotesEditor.tsx`): BlockNote editor with `@blocknote/react`, `@blocknote/shadcn`, `@blocknote/core` v0.54.0
+  - **`NotesSidebar`** (`src/components/notes/NotesSidebar.tsx`): Collapsible sidebar with folders, favorites, archived notes, search trigger
+  - **`NotesSearch`**: Cmd/Ctrl+K search modal with fuzzy matching
+  - **`NotesGallery`**: Card-based gallery view with cover images and content previews
+  - **`NotesTable`**: Sortable database-style table view
+  - **`PageHeader`**: Icon picker, cover image uploader, inline title editor
+  - **`PageProperties`**: Folder assignment, favorites toggle, archive status, timestamps
+
+- **API Routes:**
+  - `/api/notes/auth/login` (POST): Bcrypt password verification, JWT generation
+  - `/api/notes/auth/verify` (GET): Validate current JWT
+  - `/api/notes/auth/logout` (POST): Clear auth cookie
+  - `/api/notes/pages` (GET/POST): List/create notes
+  - `/api/notes/pages/[id]` (GET/PATCH/DELETE): Single note CRUD
+  - `/api/notes/folders` (GET/POST): List/create folders
+  - All routes use `getCurrentNotesUser()` for auth validation
+
+- **Layout & Navigation:**
+  - `src/app/notes/layout.tsx`: Main workspace layout with sidebar, manages auth state
+  - `src/app/notes/page.tsx`: Landing page with "Your Private Workspace" message
+  - `src/app/notes/[noteId]/page.tsx`: Single note editor with autosave indicator
+  - All notes pages use `export const dynamic = "force-dynamic"` (real-time auth required)
+
+- **CRITICAL NOTES:**
+  - **DO NOT** change the JWT secret in production without migrating existing tokens
+  - **DO NOT** remove the `lastEditedAt` field from Note schema (used for sorting/display)
+  - **DO NOT** bypass the `force-dynamic` export on `/notes/*` pages
+  - Notes system is completely isolated from the public portfolio and admin CMS
+
+---
+
+## 8. ONGOING ARCHITECTURAL ROADMAP (CONTEXT)
 When executing major feature build-outs, refer to the following roadmap specifications ensuring they align with the Centre for Social and Policy Research (CSPR) requirements:
 
 1. **Dynamic Taxonomy Combobox (Topics/Skills):**
